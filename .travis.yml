@@ -2,6 +2,6 @@ language: java
 jdk: oraclejdk8
 deploy:
   provider: heroku
-  app: peaceful-spire-56714
+  app: evening-refuge-46144
   api_key:
     secure: "1f3a7cae-76d9-45d9-b1fa-b3a8809d04d2"
