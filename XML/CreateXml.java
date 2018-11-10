@@ -18,7 +18,7 @@ import java.io.File;
 
 public class CreateXml {
 
-   public void creation(User obj) {
+   public static void creation(User obj) {
 
       try {
          DocumentBuilderFactory dbFactory =
@@ -41,24 +41,24 @@ public class CreateXml {
          password.appendChild(doc.createTextNode(obj.getPassword()));			
          
          // security element
-         Element security = doc.createElement("security");
-         rootElement.appendChild(security);
-         security.appendChild(doc.createTextNode("home town place?"));
+         Element question = doc.createElement("question");
+         rootElement.appendChild(question);
+         question.appendChild(doc.createTextNode(obj.getQuestion()));
          
          //securityAnswer element
-         Element securityAnswer = doc.createElement("securityAnswer");
-         rootElement.appendChild(securityAnswer);
-         securityAnswer.appendChild(doc.createTextNode("Bhilai"));
+         Element answer = doc.createElement("answer");
+         rootElement.appendChild(answer);
+         answer.appendChild(doc.createTextNode(obj.getAnswer()));
          
          //mobile element
          Element mobile = doc.createElement("mobile");
          rootElement.appendChild(mobile);
-         mobile.appendChild(doc.createTextNode("9889431655"));
+         mobile.appendChild(doc.createTextNode(obj.getMobile()));
          
          //email element
          Element email = doc.createElement("email");
          rootElement.appendChild(email);
-         email.appendChild(doc.createTextNode("foster@gmail.com"));
+         email.appendChild(doc.createTextNode(obj.getEmail()));
          
          
          
@@ -69,7 +69,7 @@ public class CreateXml {
          //counter child element of tests
          Element counter = doc.createElement("counter");
          tests.appendChild(counter);
-         counter.appendChild(doc.createTextNode(""+0));
+         counter.appendChild(doc.createTextNode(Integer.toString(obj.getCounter())));
          
          
 
@@ -78,7 +78,7 @@ public class CreateXml {
          TransformerFactory transformerFactory = TransformerFactory.newInstance();
          Transformer transformer = transformerFactory.newTransformer();
          DOMSource source = new DOMSource(doc);
-         StreamResult result = new StreamResult(new File("E:\\Spring_suite_workspace\\JavaXml\\src\\com\\javaxml\\cars.xml"));
+         StreamResult result = new StreamResult(new File("E:\\Spring_suite_workspace\\JavaXml\\src\\com\\javaxml\\"+obj.getUname()+".xml"));
          transformer.transform(source, result);
          
          // Output to console for testing
@@ -89,4 +89,12 @@ public class CreateXml {
       }
       
    }
+   public static void main(String[] argv) {
+	   
+	  User obj = new User();
+	  System.out.print(obj.getPassword());
+	  creation(obj);
+	  
+   }
 }
+	
