@@ -8,16 +8,13 @@ import org.springframework.web.servlet.ModelAndView;
 public class HelloWorld {
 
 
-	@RequestMapping(value="/")
-	public String hello() {
-		return "index.html";
-	}
 	
-	@RequestMapping(value="/Login")
+	@RequestMapping(value="/")
 	public String login() {
 		
 		return "login.html";
 		
 	}
+	
 
 }
