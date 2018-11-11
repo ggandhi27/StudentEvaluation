@@ -1,0 +1,89 @@
+<html>
+
+    <head>
+
+        <title>Login Page</title>
+
+    </head>
+
+    <style>
+
+        .login{
+
+            color:red;
+
+            padding:40px;
+
+            margin:auto 10px;
+
+            background-color:blue;
+
+            border-radius:100px;
+
+        
+
+        }
+
+        .access{
+
+            padding:50px;
+
+            margin:30px 30%;
+
+            background-color:pink;    
+
+        }
+
+    </style>
+
+    <body>
+
+        <div class="login" align="center">
+
+            <h1>  Welcome to Student Login Page</h1>
+
+        </div>
+
+        <div id="nav">
+
+            <ul>
+
+                <li><a href="index.jsp">Home</a></li>
+
+                <li><a href="Sign_Up.html">Sign Up</li>
+
+                <li><a href="About.html">About Us</a></li>
+
+                <li><a href="Contact.html">Contact</a></li>
+
+            
+
+            </ul>
+
+        </div>
+
+        <div class="access" align="center">
+
+            <form action="Login.jsp" method="post">
+
+                <b>Login As:</b><select name="login">
+
+                    <option value="admin">Admin</option>
+
+                    <option value="user">User</option>
+
+                </select><br><br><br>
+
+                <b>Username:</b><input type="text" name="uname"><br><br>
+
+                <b>Password:</b><input type="password" name="pass"><br><br>
+
+                <input type="submit" name="sub">
+
+            </form>
+
+        </div>
+
+    </body>
+
+</html>
