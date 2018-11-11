@@ -38,13 +38,15 @@ public class RegisterController {
 		user.setQuestion(question);
 		user.setAnswer(answer);
 		
-		if(registerService.register(user))
-		{
-			return "registration done";
-		}
-		else {
-			return "registration failed";
-		}
+//		if(registerService.register(user))
+//		{
+//			return "registration done";
+//		}
+//		else {
+//			return "registration failed";
+//		}
+		
+		return registerService.register(user);
 	}
 	
 }

@@ -19,7 +19,7 @@ import entity.User;
 @Service
 public class RegisterService {
 	
-	public boolean register(User user) {
+	public String register(User user) {
 		
 		try {
 	         DocumentBuilderFactory dbFactory =  DocumentBuilderFactory.newInstance();
@@ -108,14 +108,14 @@ public class RegisterService {
 			
 			catch (Exception e) {
 
-	         e.printStackTrace();
-	         return false;
+			return e.toString();
+//	         return false;
 
 	      }
 
 	      
 		
-		return true;
+		return "Success";
 		
 	}
 
