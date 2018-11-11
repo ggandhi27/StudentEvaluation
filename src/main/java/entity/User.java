@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class User {
 	
 	private ArrayList<Tests> testList;
+	private String fname;
+	private String lname;
 	private String uname;
 	private String password;
 	private String question;
@@ -80,6 +82,24 @@ public class User {
 		this.setMobile("9892316");
 		this.setEmail("dasf@gmail.com");
 		this.setCounter(0);
+	}
+	public ArrayList<Tests> getTestList() {
+		return testList;
+	}
+	public void setTestList(ArrayList<Tests> testList) {
+		this.testList = testList;
+	}
+	public String getFname() {
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
 	}
 	
 	
