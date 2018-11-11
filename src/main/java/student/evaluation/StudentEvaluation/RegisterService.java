@@ -83,12 +83,22 @@ public class RegisterService {
 	         Element counter = doc.createElement("counter");
 	         tests.appendChild(counter);
 	         counter.appendChild(doc.createTextNode(Integer.toString(user.getCounter())));
-
+	         
+	         
+	         File files = new File("/UserDetails");
+	         
+	         if (!files.exists()) {
+	        	 System.out.println("Directory does not exists.");
+	        	 files.mkdir();
+	        	 System.out.println("Directory created.");
+	         }
+	         
 	         // write the content into xml file
 	         TransformerFactory transformerFactory = TransformerFactory.newInstance();
 	         Transformer transformer = transformerFactory.newTransformer();
 	         DOMSource source = new DOMSource(doc);
-	         StreamResult result = new StreamResult(new File("/"+user.getUname()+".xml"));
+	         StreamResult result = new StreamResult(new File("/UserDetails/"+user.getUname()+".xml"));
+	         System.out.println("File created");
 	         transformer.transform(source, result);
 	        
 	         // Output to console for testing
@@ -99,6 +109,7 @@ public class RegisterService {
 			catch (Exception e) {
 
 	         e.printStackTrace();
+	         return false;
 
 	      }
 
