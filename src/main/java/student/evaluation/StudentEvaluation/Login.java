@@ -13,6 +13,10 @@ public class Login {
 		
 	}
 	
-	
+	@RequestMapping(value="/error")
+	public String error()
+	{
+		return "Error.html";
+	}
 
 }
