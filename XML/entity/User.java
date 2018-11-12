@@ -6,6 +6,8 @@ public class User {
 	
 	private ArrayList<Tests> testList;
 	private String uname;
+	private String fname;
+	private String lname;
 	private String password;
 	private String question;
 	private String answer;
@@ -14,14 +16,26 @@ public class User {
 	private int counter;
 	
 	
-	
-	
-	
 	public String getUname() {
 		return uname;
 	}
 	public void setUname(String uname) {
 		this.uname = uname;
+	}
+	
+	
+	public String getFname() {
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.uname = fname;
+	}
+	
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
 	}
 	
 	
@@ -74,6 +88,8 @@ public class User {
 
 	public User() {
 		this.setUname("rajendar");
+		this.setFname("mr.");
+		this.setLname("rajesh");
 		this.setPassword("ranger");
 		this.setQuestion("favourite animal?");
 		this.setAnswer("cat");
