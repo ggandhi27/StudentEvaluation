@@ -1,5 +1,8 @@
 package student.evaluation.StudentEvaluation;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,4 +52,22 @@ public class RegisterController {
 		return registerService.register(user);
 	}
 	
+	@RequestMapping(value="/read")
+	@ResponseBody
+	public String read()
+	{
+		try {
+			BufferedReader p = new BufferedReader(new FileReader("/tmp/ggandhi"));
+			String word="",line;
+			while ((line = p.readLine()) != null) {
+                System.out.println(line);
+            }
+			return word;
+
+		}
+		
+		catch(Exception e) {
+			return "Exception occured.";
+		}
+	}
 }
