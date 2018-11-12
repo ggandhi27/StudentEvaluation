@@ -60,7 +60,7 @@ public class RegisterController {
 			BufferedReader p = new BufferedReader(new FileReader("/tmp/ggandhi.xml"));
 			String word="",line;
 			while ((line = p.readLine()) != null) {
-                System.out.println(line);
+                word = word +line;
             }
 			return word;
 
