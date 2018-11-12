@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Login {
 	
 	@RequestMapping(value="/")
-	public String login() {
+	public String Login() {
 		
 		return "login.html";
 		
