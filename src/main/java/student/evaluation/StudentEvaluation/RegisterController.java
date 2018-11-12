@@ -67,7 +67,7 @@ public class RegisterController {
 		}
 		
 		catch(Exception e) {
-			return "Exception occured.";
+			return e.getMessage();
 		}
 	}
 }
