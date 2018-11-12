@@ -85,19 +85,19 @@ public class RegisterService {
 	         counter.appendChild(doc.createTextNode(Integer.toString(user.getCounter())));
 	         
 	         
-	         File files = new File("/UserDetails");
-	         
-	         if (!files.exists()) {
-	        	 System.out.println("Directory does not exists.");
-	        	 files.mkdir();
-	        	 System.out.println("Directory created.");
-	         }
-	         
+//	         File files = new File("/UserDetails");
+//	         
+//	         if (!files.exists()) {
+//	        	 System.out.println("Directory does not exists.");
+//	        	 files.mkdir();
+//	        	 System.out.println("Directory created.");
+//	         }
+//	         
 	         // write the content into xml file
 	         TransformerFactory transformerFactory = TransformerFactory.newInstance();
 	         Transformer transformer = transformerFactory.newTransformer();
 	         DOMSource source = new DOMSource(doc);
-	         StreamResult result = new StreamResult(new File("/UserDetails/"+user.getUname()+".xml"));
+	         StreamResult result = new StreamResult(new File("/tmp/"+user.getUname()+".xml"));
 	         System.out.println("File created");
 	         transformer.transform(source, result);
 	        
