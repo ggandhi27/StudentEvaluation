@@ -57,7 +57,7 @@ public class RegisterController {
 	public String read()
 	{
 		try {
-			BufferedReader p = new BufferedReader(new FileReader("/tmp/ggandhi"));
+			BufferedReader p = new BufferedReader(new FileReader("/tmp/ggandhi.xml"));
 			String word="",line;
 			while ((line = p.readLine()) != null) {
                 System.out.println(line);
