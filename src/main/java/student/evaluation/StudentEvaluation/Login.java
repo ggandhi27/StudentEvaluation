@@ -36,14 +36,13 @@ public class Login {
        	 return("User does not exists");
        	}
 		else {
-			if(loginService.checkPassword(password)) {
+			if(loginService.checkPassword(username,password)) {
 				User user = loginService.getUserObject(username);
-				
+				return "Login succssfull";
 			}
 			else {
 				return "Either username or password is incorrect.";
 			}
 		}
-		return "";
 	}
 }
