@@ -53,9 +53,20 @@ public class LoginService {
 	}
 
 	public User getUserObject(String username) {
+		User user = new User();
+		Document doc = getDocument(username);
+		NodeList nList = doc.getElementsByTagName("users");
+		Node node = nList.item(0);
+		Element element  = (Element)node;
+
+		user.setUname(element.getElementsByTagName("uname").item(0).getTextContent());
+		user.setPassword(element.getElementsByTagName("password").item(0).getTextContent());
+		user.setFname(element.getElementsByTagName("fname").item(0).getTextContent());
+		user.setLname(element.getElementsByTagName("lname").item(0).getTextContent());
+		user.setQuestion(element.getElementsByTagName("question").item(0).getTextContent());
+		user.setAnswer(element.getElementsByTagName("answer").item(0).getTextContent());
+		user.setEmail(element.getElementsByTagName("email").item(0).getTextContent());
 		
-		
-		
-		return null;
+		return user;
 	}
 }

@@ -38,7 +38,7 @@ public class Login {
 		else {
 			if(loginService.checkPassword(username,password)) {
 				User user = loginService.getUserObject(username);
-				return "Login successfull";
+				return user.getEmail();
 			}
 			else {
 				return "Either username or password is incorrect.";
