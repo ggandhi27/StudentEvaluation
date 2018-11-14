@@ -37,7 +37,7 @@ public class RegisterService {
 	         rootElement.appendChild(fname);
 	         fname.appendChild(doc.createTextNode(user.getFname()));	         
 
-	         //fname element
+	         //lname element
 	         Element lname = doc.createElement("lname");
 	         rootElement.appendChild(lname);
 	         lname.appendChild(doc.createTextNode(user.getLname()));	         
