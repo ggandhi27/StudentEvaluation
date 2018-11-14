@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class Dashboard {
 	
 	@RequestMapping(value="/dash")
-	@ResponseBody
 	public String Dash() {
 		return "dashboard.html";
 	}
