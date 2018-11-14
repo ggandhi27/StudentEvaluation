@@ -1,6 +1,7 @@
 package student.evaluation.StudentEvaluation;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,13 @@ public class RegisterController {
 			@RequestParam(value="password")String password,
 			@RequestParam(value="question")String question,
 			@RequestParam(value="answer")String answer) {
+		
+		 File files = new File("/tmp/"+username+".xml");
+         
+         if (files.exists())
+        	 return "Username already exists exists.";
+        	
+         
 		
 		User user = new User();
 		
