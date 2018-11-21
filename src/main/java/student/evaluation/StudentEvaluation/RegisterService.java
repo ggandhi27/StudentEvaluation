@@ -106,7 +106,7 @@ public class RegisterService {
 	         TransformerFactory transformerFactory = TransformerFactory.newInstance();
 	         Transformer transformer = transformerFactory.newTransformer();
 	         DOMSource source = new DOMSource(doc);
-	         StreamResult result = new StreamResult(new File("/tmp/"+user.getUname()+".xml"));
+	         StreamResult result = new StreamResult(new File("e:\\"+user.getUname()+".xml"));
 	         System.out.println("File created");
 	         transformer.transform(source, result);
 	        
