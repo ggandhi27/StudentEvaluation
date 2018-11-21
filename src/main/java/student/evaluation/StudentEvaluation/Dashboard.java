@@ -1,6 +1,7 @@
 package student.evaluation.StudentEvaluation;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -8,7 +9,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class Dashboard {
 	
 	@RequestMapping(value="/dash")
-	public String Dash() {
-		return "dashboard.html";
+	public String Dash(ModelMap model) {
+		
+		
+		return "dashboard.jsp";
 	}
 }

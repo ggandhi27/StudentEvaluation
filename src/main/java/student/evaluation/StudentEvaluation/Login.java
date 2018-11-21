@@ -4,13 +4,16 @@ import java.io.File;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import entity.User;
 
 @Controller
+@SessionAttributes("username")
 public class Login {
 	
 	@Autowired
@@ -25,9 +28,8 @@ public class Login {
 	}
 	
 	@RequestMapping(value="/Login")
-	@ResponseBody
 	public String checkLogin(@RequestParam(name="username")String username,
-			@RequestParam(name="password")String password) {
+			@RequestParam(name="password")String password, ModelMap model) {
 		
         
 		File file = new File("/tmp/"+username+".xml");		
@@ -38,7 +40,8 @@ public class Login {
 		else {
 			if(loginService.checkPassword(username,password)) {
 				User user = loginService.getUserObject(username);
-				return user.getEmail();
+				model.put("username",username);
+				return "dashboard.jsp";
 			}
 			else {
 				return "Either username or password is incorrect.";

@@ -1,4 +1,5 @@
 <!doctype html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -41,13 +42,13 @@
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a class="simple-text">
-                    User Name
+                    ${username}
                 </a>
             </div>
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="/dash">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>
                     </a>
