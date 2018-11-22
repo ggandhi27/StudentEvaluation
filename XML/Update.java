@@ -20,38 +20,60 @@ public class Update {
 
 	
 	
+	private static NodeList fnameList;
+	private static NodeList lnameList;
+	private static NodeList passwordList;
+	private static NodeList mobileList;
+
+	public static void updateName(User obj) {
+		
+		obj.setFiName(fnameList.item(0));
+		obj.setLaName(lnameList.item(0));
+	}
 	
+	public static void updatePassword(User obj) {
+		obj.setPass(obj.getPassword());
+	}
+	
+	public static void updateMNumber(User obj) {
+		obj.setmNumber(obj.getMobile());
+	}
 	
 	public static void main(String[] argv) {
 		try {
 			
 			User obj = new User();
-
 			String filepath = "E:\\Spring_suite_workspace\\JavaXml\\src\\com\\javaxml\\"+obj.getUname()+".xml";
 	        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+	        System.out.print("sdsa");
 	        Document doc = dBuilder.parse(filepath);
 	        doc.getDocumentElement().normalize();
-	        System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-	        //node list
-	        NodeList fnameList = doc.getElementsByTagName("fname");
-	        NodeList lnameList = doc.getElementsByTagName("lname");
-	        NodeList passwordList = doc.getElementsByTagName("password");
-	        NodeList mobileList = doc.getElementsByTagName("mobile");
+	        fnameList = doc.getElementsByTagName("fname");
+	        lnameList = doc.getElementsByTagName("lname");
+	        passwordList = doc.getElementsByTagName("password");
+	        mobileList = doc.getElementsByTagName("mobile");
 	        
 	        //converting to nodes
-	        Node fname = fnameList.item(0);
-	        Node lname = lnameList.item(0);
-	        Node password = passwordList.item(0);
-	        Node mobile = mobileList.item(0);
+	        
+//	        Node fname = fnameList.item(0);
+//	        Node lname = lnameList.item(0);
+//	        Node password = passwordList.item(0);
+//	        Node mobile = mobileList.item(0);
 	        
 	        
-	        //to be added inside methods
-	        fname.setTextContent("hari");
-	        lname.setTextContent("sadu");
-	        password.setTextContent("ragnar");
-	        mobile.setTextContent("124214");
+//	        //to be added inside methods
+//	        fname.setTextContent("hari");
+//	        lname.setTextContent("sadu");
+//	        password.setTextContent("ragnar");
+//	        mobile.setTextContent("124214");
 	        
+	        updateName(obj);
+//	        updatePassword(obj);
+//	        updateMNumber(obj);
+//	        
+	        System.out.print(obj.getLname());
+	        System.out.print("sdsa");
 	        
 	        TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
