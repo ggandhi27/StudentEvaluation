@@ -32,11 +32,11 @@ public class Update {
 	}
 	
 	public static void updatePassword(User obj) {
-		obj.setPass(obj.getPassword());
+		obj.setPass(passwordList.item(0));
 	}
 	
 	public static void updateMNumber(User obj) {
-		obj.setmNumber(obj.getMobile());
+		obj.setmNumber(mobileList.item(0));
 	}
 	
 	public static void main(String[] argv) {
@@ -53,27 +53,7 @@ public class Update {
 	        lnameList = doc.getElementsByTagName("lname");
 	        passwordList = doc.getElementsByTagName("password");
 	        mobileList = doc.getElementsByTagName("mobile");
-	        
-	        //converting to nodes
-	        
-//	        Node fname = fnameList.item(0);
-//	        Node lname = lnameList.item(0);
-//	        Node password = passwordList.item(0);
-//	        Node mobile = mobileList.item(0);
-	        
-	        
-//	        //to be added inside methods
-//	        fname.setTextContent("hari");
-//	        lname.setTextContent("sadu");
-//	        password.setTextContent("ragnar");
-//	        mobile.setTextContent("124214");
-	        
-	        updateName(obj);
-//	        updatePassword(obj);
-//	        updateMNumber(obj);
-//	        
-	        System.out.print(obj.getLname());
-	        System.out.print("sdsa");
+
 	        
 	        TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
@@ -86,11 +66,8 @@ public class Update {
 		catch (Exception e) {
 	         e.printStackTrace();
 	    }  
-		
 		  
-		  //creation(obj);
-		  
-	   }
+	}
 	
 	
 }
