@@ -16,11 +16,11 @@ public class User {
 	private String email;
 	private int counter;
 	
+	//For use in updation code of profile
 	private Node fiName;
 	private Node laName;
 	private Node mNumber;
 	private Node pass;
-	
 	
 	
 	public void setFiName(Node fiName) {
@@ -30,17 +30,20 @@ public class User {
 	
 	public void setLaName(Node laName) {
 		this.laName = laName;
+		this.laName.setTextContent(this.lname);
 	}
 	
-	public void setmNumber(String mNumber) {
-		this.mNumber.setTextContent( mNumber);
+	public void setmNumber(Node mNumber) {
+		this.mNumber = mNumber;
+		this.mNumber.setTextContent(this.mobile);
 	}
 	
-	public void setPass(String pass) {
-		this.pass.setTextContent(pass);
+	public void setPass(Node pass) {
+		this.pass = pass;
+		this.pass.setTextContent(this.password);
 	}
 
-	
+	//for use in updation code of profile end
 	
 	
 	public String getUname() {
@@ -115,12 +118,12 @@ public class User {
 
 	public User() {
 		this.setUname("rajendar");
-		this.setFname("zxcv");
-		this.setLname("zzzzz");
-		this.setPassword("fasg ");
+		this.setFname("asf");
+		this.setLname("aszxvf");
+		this.setPassword("12412 ");
 		this.setQuestion("favourite animal?");
 		this.setAnswer("cat");
-		this.setMobile("9892316");
+		this.setMobile("98492316");
 		this.setEmail("dasf@gmail.com");
 		this.setCounter(0);
 	}
