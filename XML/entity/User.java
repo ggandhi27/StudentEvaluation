@@ -1,6 +1,7 @@
 package entity;
 
 import java.util.ArrayList;
+import org.w3c.dom.Node;
 
 public class User {
 	
@@ -15,6 +16,32 @@ public class User {
 	private String email;
 	private int counter;
 	
+	private Node fiName;
+	private Node laName;
+	private Node mNumber;
+	private Node pass;
+	
+	
+	
+	public void setFiName(Node fiName) {
+		this.fiName = fiName;
+		this.fiName.setTextContent(this.fname);
+	}
+	
+	public void setLaName(Node laName) {
+		this.laName = laName;
+	}
+	
+	public void setmNumber(String mNumber) {
+		this.mNumber.setTextContent( mNumber);
+	}
+	
+	public void setPass(String pass) {
+		this.pass.setTextContent(pass);
+	}
+
+	
+	
 	
 	public String getUname() {
 		return uname;
@@ -28,7 +55,7 @@ public class User {
 		return fname;
 	}
 	public void setFname(String fname) {
-		this.uname = fname;
+		this.fname = fname;
 	}
 	
 	public String getLname() {
@@ -88,9 +115,9 @@ public class User {
 
 	public User() {
 		this.setUname("rajendar");
-		this.setFname("mr.");
-		this.setLname("rajesh");
-		this.setPassword("ranger");
+		this.setFname("zxcv");
+		this.setLname("zzzzz");
+		this.setPassword("fasg ");
 		this.setQuestion("favourite animal?");
 		this.setAnswer("cat");
 		this.setMobile("9892316");
