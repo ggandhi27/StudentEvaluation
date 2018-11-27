@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class Dashboard {
 	
 	@RequestMapping(value="/dash")
-	public String Dash(ModelMap model) {
+	public String Dash() {
 		
 		
 		return "dashboard.jsp";

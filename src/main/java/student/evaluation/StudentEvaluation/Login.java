@@ -5,6 +5,7 @@ import java.io.File;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,13 +29,13 @@ public class Login {
 		
 	}
 	
-	@RequestMapping(value="/Login")
-	@ResponseBody
+	@PostMapping(value="/Login")
 	public String checkLogin(@RequestParam(name="username")String username,
-			@RequestParam(name="password")String password) {
+			@RequestParam(name="password")String password,@org.springframework.web.bind.annotation.ModelAttribute("user") User user1,
+			org.springframework.ui.Model model,javax.servlet.http.HttpSession session) {
 		
         
-		File file = new File("/tmp/"+username+".xml");		
+		File file = new File("e:\\"+username+".xml");		
         
 		if (!file.exists()) {
        	 return("User does not exists");
@@ -42,7 +43,9 @@ public class Login {
 		else {
 			if(loginService.checkPassword(username,password)) {
 				User user = loginService.getUserObject(username);
-				return user.getEmail();
+				model.addAttribute("username", username);
+				session.setAttribute("username", username);
+				return "login.html";
 			}
 			else {
 				return "Either username or password is incorrect.";
