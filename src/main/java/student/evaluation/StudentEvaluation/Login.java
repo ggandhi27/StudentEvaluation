@@ -25,7 +25,7 @@ public class Login {
 	@RequestMapping(value="/")
 	public String login() {
 		
-		return "login.html";
+		return "login";
 		
 	}
 	
