@@ -11,7 +11,11 @@ public class Dashboard {
 	
 	@RequestMapping(value="/dash",method=RequestMethod.GET)
 	public ModelAndView Dash() {
-		ModelAndView model=new ModelAndView("dashboard.html");
+		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
+		templateResolver.setPrefix("/templates/");
+        templateResolver.setSuffix(".html");
+        
+		ModelAndView model=new ModelAndView("dashboard");
 		model.addObject("username", "Ankit Pathak");
 		return model;
 	}
