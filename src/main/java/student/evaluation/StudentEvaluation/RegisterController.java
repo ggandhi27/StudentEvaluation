@@ -50,7 +50,7 @@ public class RegisterController {
 		
 		if(registerService.register(user))
 		{
-			return "/";
+			return "redirect:/";
 		}
 		else {
 			return "registration failed";
