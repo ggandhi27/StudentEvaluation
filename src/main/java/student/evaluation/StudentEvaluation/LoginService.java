@@ -16,10 +16,10 @@ import entity.User;
 @Service
 public class LoginService {
 
-	private static Document getDocument(String username) {
+	private Document getDocument(String username) {
 		
 		try {
-	         File inputFile = new File("e:\\"+username+".xml");
+	         File inputFile = new File("/tmp/"+username+".xml");
 	         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	         Document doc = dBuilder.parse(inputFile);
@@ -32,9 +32,9 @@ public class LoginService {
 		
 	}
 	
-	public static boolean checkPassword(String username,String password) {
+	public boolean checkPassword(String username,String password) {
 		
-		Document doc = getDocument(username);
+		Document doc = this.getDocument(username);
 		
 		String pass;
 		NodeList nList = doc.getElementsByTagName("users");
