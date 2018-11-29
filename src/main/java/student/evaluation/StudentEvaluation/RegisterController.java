@@ -26,9 +26,9 @@ public class RegisterController {
 	@ResponseBody
 	public String register(@RequestParam(value="fname") String fname,
 			@RequestParam(value="lname") String lname,
-			@RequestParam(value="username") String username,
+			@RequestParam(value="uname") String username,
 			@RequestParam(value="email") String email,
-			@RequestParam(value="password")String password,
+			@RequestParam(value="pass")String password,
 			@RequestParam(value="question")String question,
 			@RequestParam(value="answer")String answer) {
 		
