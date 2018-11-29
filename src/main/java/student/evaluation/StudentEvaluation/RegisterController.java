@@ -23,7 +23,6 @@ public class RegisterController {
 	private RegisterService registerService;
 	
 	@RequestMapping(value="/register", method = RequestMethod.POST)
-	@ResponseBody
 	public String register(@RequestParam(value="fname") String fname,
 			@RequestParam(value="lname") String lname,
 			@RequestParam(value="uname") String username,
@@ -49,15 +48,15 @@ public class RegisterController {
 		user.setQuestion(question);
 		user.setAnswer(answer);
 		
-//		if(registerService.register(user))
-//		{
-//			return "registration done";
-//		}
-//		else {
-//			return "registration failed";
-//		}
+		if(registerService.register(user))
+		{
+			return "/";
+		}
+		else {
+			return "registration failed";
+		}
 		
-		return registerService.register(user);
+//		return registerService.register(user);
 	}
 	
 	@RequestMapping(value="/read")
