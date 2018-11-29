@@ -7,9 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
+
 import entity.User;
 
 @Controller
+
 public class Login {
 	
 	@Autowired
@@ -24,22 +28,27 @@ public class Login {
 	}
 	
 	@RequestMapping(value="/Login")
-	@ResponseBody
-	public String checkLogin(@RequestParam(name="username")String username,
+	public ModelAndView checkLogin(@RequestParam(name="username")String username,
 			@RequestParam(name="password")String password) {
 		
         
 		File file = new File("/tmp/"+username+".xml");		
         
 		if (!file.exists()) {
-       	 return("User does not exists");
+       	 return null;
        	}
 		else {
 			if(loginService.checkPassword(username,password)) {
-				return "Success";
+				ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
+				templateResolver.setPrefix("/templates/");
+		        templateResolver.setSuffix(".html");
+		        
+				ModelAndView model=new ModelAndView("dashboard");
+				model.addObject("username", username);
+				return model;
 			}
 			else {
-				return "Either username or password is incorrect.";
+				return null;
 			}
 		}
 	}
