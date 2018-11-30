@@ -13,7 +13,7 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 import entity.User;
 
 @Controller
-@SessionAttributes("username")
+@SessionAttributes("user")
 public class Login {
 	
 	@Autowired

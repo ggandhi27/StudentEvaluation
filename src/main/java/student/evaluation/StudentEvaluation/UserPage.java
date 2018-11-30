@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Controller
-@SessionAttributes("username")
+@SessionAttributes("user")
 public class UserPage {
 	
 	@RequestMapping(value="/user",method=RequestMethod.GET)
