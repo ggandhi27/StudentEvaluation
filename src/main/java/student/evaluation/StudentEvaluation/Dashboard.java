@@ -20,7 +20,6 @@ public class Dashboard {
         templateResolver.setSuffix(".html");
         
 		ModelAndView model=new ModelAndView("dashboard");
-		model.addObject("username", "Ankit Pathak");
 		return model;
 	}
 }
