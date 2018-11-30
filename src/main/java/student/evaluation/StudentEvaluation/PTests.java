@@ -4,10 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Controller
+@SessionAttributes("username")
 public class PTests {
 	
 	@RequestMapping(value="/ptests",method=RequestMethod.GET)
@@ -17,7 +19,6 @@ public class PTests {
         templateResolver.setSuffix(".html");
         
 		ModelAndView model=new ModelAndView("ptests");
-		model.addObject("username", "Ankit Pathak");
 		return model;
 	}
 }

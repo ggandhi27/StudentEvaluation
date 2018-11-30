@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
+import entity.User;
+
 @Controller
 @SessionAttributes("username")
 public class Login {
@@ -42,7 +44,9 @@ public class Login {
 		        templateResolver.setSuffix(".html");
 		        
 				ModelAndView model=new ModelAndView("dashboard");
-				model.addObject("username", username);
+				
+				User user  = loginService.getUserObject(username);
+				model.addObject("user", user);
 				return model;
 			}
 			else {
