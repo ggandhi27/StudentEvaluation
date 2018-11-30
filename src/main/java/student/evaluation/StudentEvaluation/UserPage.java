@@ -17,7 +17,6 @@ public class UserPage {
         templateResolver.setSuffix(".html");
         
 		ModelAndView model=new ModelAndView("user");
-		model.addObject("username", "Ankit Pathak");
 		return model;
 	}
 }
