@@ -43,10 +43,9 @@ public class Update {
 		try {
 			
 			User obj = new User();
-			String filepath = "E:\\Spring_suite_workspace\\JavaXml\\src\\com\\javaxml\\"+obj.getUname()+".xml";
+			String filepath = "/tmp/"+obj.getUname()+".xml";
 	        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-	        System.out.print("sdsa");
 	        Document doc = dBuilder.parse(filepath);
 	        doc.getDocumentElement().normalize();
 	        fnameList = doc.getElementsByTagName("fname");
