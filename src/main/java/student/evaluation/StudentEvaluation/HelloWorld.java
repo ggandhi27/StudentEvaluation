@@ -9,7 +9,7 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 @Controller
 public class HelloWorld {
 
-	@RequestMapping(value="/hello",method=RequestMethod.GET)
+	@RequestMapping(value="/hell",method=RequestMethod.GET)
 	public ModelAndView hello() {
 		ServletContextTemplateResolver templateResolver = 
 	            new ServletContextTemplateResolver();
