@@ -104,16 +104,11 @@
                             <div class="content">
                                 <form>
                                     <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>Username</label>
-                                                <input type="text" class="form-control border-input" placeholder="Username" value="michael23"/>
-                                            </div>
-                                        </div>
+                                       
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" class="form-control border-input" placeholder="Email" />
+                                                <input type="email" class="form-control border-input" placeholder="Email" th:value="${user.getEmail()}"/>
                                             </div>
                                         </div>
                                     </div>
@@ -122,13 +117,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>First Name</label>
-                                                <input type="text" class="form-control border-input" placeholder="Company" value="Chet"/>
+                                                <input type="text" class="form-control border-input" placeholder="Company" th:value="${user.getFname()}"/>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Last Name</label>
-                                                <input type="text" class="form-control border-input" placeholder="Last Name" value="Faker"/>
+                                                <input type="text" class="form-control border-input" placeholder="Last Name" th:value="${user.getLname()}"/>
                                             </div>
                                         </div>
                                     </div>
@@ -136,11 +131,11 @@
                                    	  <div class="col-md-6">
                                     	<div class="form-group">
                                                 <label>Old Password</label>
-                                                <input type="text" class="form-control border-input" placeholder="Old Password" value="***********"/>
+                                                <input type="text" class="form-control border-input" placeholder="Old Password"/>
                                         </div>
                                         <div class="form-group">
                                                 <label>New Password</label>
-                                                <input type="text" class="form-control border-input" placeholder="New Password" value="***********"/>
+                                                <input type="text" class="form-control border-input" placeholder="New Password"/>
                                         </div>
                                       </div>
                                     </div>
