@@ -28,10 +28,10 @@ public class UpdateController {
 		
 		
 		ModelAndView model =  new ModelAndView("user");
-		
-		user.setFname(fname);
-		user.setLname(lname);
-		user.setPassword(npass);
+		User obj = new User();
+		obj.setFname(fname);	
+		obj.setLname(lname);
+		obj.setPassword(npass);
 		updateService.updateUser(user);
 		return model;
 		
