@@ -116,17 +116,17 @@ public class User {
 		this.counter = counter;
 	}
 
-	public User() {
-		this.setUname("rajendar");
-		this.setFname("asf");
-		this.setLname("aszxvf");
-		this.setPassword("12412 ");
-		this.setQuestion("favourite animal?");
-		this.setAnswer("cat");
-		this.setMobile("98492316");
-		this.setEmail("dasf@gmail.com");
-		this.setCounter(0);
-	}
+//	public User() {
+//		this.setUname("rajendar");
+//		this.setFname("asf");
+//		this.setLname("aszxvf");
+//		this.setPassword("12412 ");
+//		this.setQuestion("favourite animal?");
+//		this.setAnswer("cat");
+//		this.setMobile("98492316");
+//		this.setEmail("dasf@gmail.com");
+//		this.setCounter(0);
+//	}
 	
 	
 	
