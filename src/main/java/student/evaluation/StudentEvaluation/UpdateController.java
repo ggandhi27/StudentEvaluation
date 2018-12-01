@@ -26,9 +26,13 @@ public class UpdateController {
 			@RequestParam(name="npass")String npass) {
 		
 		
+		ModelAndView model =  new ModelAndView("user");
 		
+		user.setFname(fname);
+		user.setLname(lname);
+		user.setPassword(npass);
+		updateService.updateUser(user);
+		return model;
 		
-		
-		return null;
 	}
 }
