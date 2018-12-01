@@ -23,13 +23,13 @@ public class UpdateService {
 	private static NodeList lnameList;
 	private static NodeList passwordList;
 
-	public static void updateName(User obj) {
+	public void updateName(User obj) {
 		
 		obj.setFiName(fnameList.item(0));
 		obj.setLaName(lnameList.item(0));
 	}
 	
-	public static void updatePassword(User obj) {
+	public void updatePassword(User obj) {
 		obj.setPass(passwordList.item(0));
 	}
 	

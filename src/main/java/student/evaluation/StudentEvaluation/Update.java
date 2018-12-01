@@ -1,4 +1,4 @@
-package com.javaxml;
+package student.evaluation.StudentEvaluation;
 
 import entity.User;
 import javax.xml.transform.Transformer;
@@ -13,7 +13,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;	
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
-import com.javaxml.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 public class Update {
@@ -39,11 +38,11 @@ public class Update {
 		obj.setmNumber(mobileList.item(0));
 	}
 	
-	public static void main(String[] argv) {
+	public static void main(String[] arg) {
 		try {
-			
 			User obj = new User();
-			String filepath = "/tmp/"+obj.getUname()+".xml";
+//			String filepath = "/tmp/"+obj.getUname()+".xml";
+			String filepath = "e:\\gaurav.xml";
 	        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	        Document doc = dBuilder.parse(filepath);
@@ -52,7 +51,7 @@ public class Update {
 	        lnameList = doc.getElementsByTagName("lname");
 	        passwordList = doc.getElementsByTagName("password");
 	        mobileList = doc.getElementsByTagName("mobile");
-
+	        
 	        
 	        TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
