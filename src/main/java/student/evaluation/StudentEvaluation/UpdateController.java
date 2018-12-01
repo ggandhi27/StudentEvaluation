@@ -19,7 +19,8 @@ public class UpdateController {
 	UpdateService updateService;
 	
 	@RequestMapping("/update")
-	public ModelAndView updateProfile(
+	@ResponseBody
+	public String updateProfile(
 			@ModelAttribute("user")User user,
 			@RequestParam(name="fname")String fname,
 			@RequestParam(name="lname")String lname,
@@ -27,15 +28,15 @@ public class UpdateController {
 			@RequestParam(name="npass")String npass) {
 		
 		
-		ModelAndView model =  new ModelAndView("user");
-		user.setFname(fname);
-		user.setLname(lname);
-		user.setPassword(npass);
-		updateService.updateUser(user);
-		model.addObject("user", user);
-		return model;
-		
-//		return user.getEmail();
+//		ModelAndView model =  new ModelAndView("user");
+//		user.setFname(fname);
+//		user.setLname(lname);
+//		user.setPassword(npass);
+//		updateService.updateUser(user);
+//		model.addObject("user", user);
+//		return model;
+//		
+		return user.getEmail();
 		
 	}
 }
