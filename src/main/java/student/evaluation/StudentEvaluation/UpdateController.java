@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,21 +19,24 @@ public class UpdateController {
 	UpdateService updateService;
 	
 	@RequestMapping("/update")
-	public ModelAndView updateProfile(
+	@ResponseBody
+	public String updateProfile(
 			@ModelAttribute("user")User user,
 			@RequestParam(name="fname")String fname,
 			@RequestParam(name="lname")String lname,
 			@RequestParam(name="opass")String opass,
 			@RequestParam(name="npass")String npass) {
 		
+//		
+//		ModelAndView model =  new ModelAndView("user");
+//		
+//		user.setFname(fname);
+//		user.setLname(lname);
+//		user.setPassword(npass);
+//		updateService.updateUser(user);
+//		return model;
 		
-		ModelAndView model =  new ModelAndView("user");
-		
-		user.setFname(fname);
-		user.setLname(lname);
-		user.setPassword(npass);
-		updateService.updateUser(user);
-		return model;
+		return user.getEmail();
 		
 	}
 }
