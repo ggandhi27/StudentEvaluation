@@ -31,8 +31,7 @@ public class UpdateController {
 		user.setFname(fname);
 		user.setLname(lname);
 		user.setPassword(npass);
-		updateService.updateName(user);
-		updateService.updatePassword(user);
+		updateService.updateUser(user);
 		model.addObject("user", user);
 		return model;
 		

@@ -45,8 +45,8 @@ public class UpdateService {
 	        lnameList = doc.getElementsByTagName("lname");
 	        passwordList = doc.getElementsByTagName("password");
 	        
-	        updateName(obj);
-	        updatePassword(obj);
+	        this.updateName(obj);
+	        this.updatePassword(obj);
 	        
 	        TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
