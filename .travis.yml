@@ -1,5 +1,9 @@
 language: java
 jdk: oraclejdk8
+branches:
+        only:
+                - gaurav
+                - ankit
 deploy:
         provider: heroku
         app: evening-refuge-46144
