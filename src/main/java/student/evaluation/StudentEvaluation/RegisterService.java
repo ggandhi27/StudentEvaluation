@@ -22,6 +22,12 @@ public class RegisterService {
 	public boolean register(User user) {
 		
 		try {
+			
+				File files = new File("/tmp/"+user.getUname()+".xml");
+	         
+	         if (files.exists())
+	        	 throw new Exception();
+	  
 	         DocumentBuilderFactory dbFactory =  DocumentBuilderFactory.newInstance();
 	         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	         Document doc = dBuilder.newDocument();
