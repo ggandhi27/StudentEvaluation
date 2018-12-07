@@ -116,10 +116,10 @@ public class TestRegistrationService {
 				ans = this.getName();
 				ques = this.getQuestion();
 				email = this.getEmail();
-				str = uname+','+fname+','+lname+','+pass+','+ans+','+ques+','+email+','+"true";
+				str = uname+','+fname+','+lname+','+pass+','+ans+','+ques+','+email+','+"True";
 				bufferedWriter.write(str);
 				bufferedWriter.newLine();
-				str = uname+','+fname+','+lname+','+pass+','+ans+','+ques+','+email+','+"false";
+				str = uname+','+fname+','+lname+','+pass+','+ans+','+ques+','+email+','+"False";
 				bufferedWriter.write(str);
 				bufferedWriter.newLine();
 				
@@ -152,12 +152,12 @@ public class TestRegistrationService {
 				user.setEmail(strArr[6]);
 				
 				Boolean flag = registerService.register(user);
-				assertEquals(Boolean.parseBoolean(strArr[7]),flag);
-				
+//				assertEquals(Boolean.parseBoolean(strArr[7]),flag);
+				assertEquals(strArr[7],String.valueOf(flag));
 			}
 		}
-		catch(IOException e) {
-			fail("Exception occured while testing");
+		catch(Exception e) {
+			fail("Exception occured while testing. : "+e);
 		}
 	}
 
