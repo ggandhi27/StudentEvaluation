@@ -11,7 +11,6 @@ public class StudentEvaluationApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		
 	}
 
 }

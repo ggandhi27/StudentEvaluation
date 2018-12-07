@@ -14,10 +14,15 @@ import java.util.Random;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import entity.User;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class TestRegistrationService {
 	
 	@Autowired
@@ -133,7 +138,7 @@ public class TestRegistrationService {
 		
 		try {
 			
-			BufferedReader p = new BufferedReader(new InputStreamReader(new FileInputStream("e:\\TestFile.csv")));
+			BufferedReader p = new BufferedReader(new InputStreamReader(new FileInputStream("/tmp/TestFile.csv")));
 			String str;
 			while((str=p.readLine())!=null) {
 				String strArr[] = str.split(",");
@@ -152,7 +157,7 @@ public class TestRegistrationService {
 			}
 		}
 		catch(IOException e) {
-			System.out.println(e);
+			fail("Exception occured while testing");
 		}
 	}
 
