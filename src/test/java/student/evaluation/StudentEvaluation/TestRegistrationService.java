@@ -21,6 +21,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import entity.User;
 
+@SpringBootTest
 public class TestRegistrationService {
 	
 //	@Autowired
