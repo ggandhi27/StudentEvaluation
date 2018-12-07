@@ -4,7 +4,7 @@ public class Question {
 
 	private String question;
 	private String choice[] = new String[4];
-	int answer;
+	private int answer;
 	public String getQuestion() {
 		return question;
 	}
