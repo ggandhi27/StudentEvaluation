@@ -84,7 +84,8 @@ public class TestRegistrationService {
 		
 		return email;
 	}
-	@Before
+//	@Before
+	
 	public void createTestCases(){
 		
 		HashMap<String, Boolean> userMap= new HashMap<>();
@@ -134,6 +135,7 @@ public class TestRegistrationService {
 	@Test
 	public void test() {
 		
+		this.createTestCases();
 		try {
 			
 			BufferedReader p = new BufferedReader(new InputStreamReader(new FileInputStream("/tmp/TestFile.csv")));
