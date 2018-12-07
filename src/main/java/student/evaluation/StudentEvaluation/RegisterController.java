@@ -59,12 +59,12 @@ public class RegisterController {
 //		return registerService.register(user);
 	}
 	
-	@RequestMapping(value="/read")
+	@RequestMapping(value="/read",method = RequestMethod.GET)
 	@ResponseBody
-	public String read()
+	public String read(@RequestParam(value="file")String file)
 	{
 		try {
-			BufferedReader p = new BufferedReader(new FileReader("/tmp/gaurav.xml"));
+			BufferedReader p = new BufferedReader(new FileReader("/tmp/"+file));
 			String word="",line;
 			while ((line = p.readLine()) != null) {
                 word = word +line;
