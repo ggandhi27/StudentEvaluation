@@ -96,7 +96,7 @@ public class Question {
 		    }
 			
 	}
-	public ArrayList<Questions> fetchQuestion(Questions questions) {
+	public ArrayList<Questions> fetchQuestion() {
 	
 		ArrayList<Questions> arrayList = new ArrayList<Questions>();
 		try {
@@ -108,6 +108,7 @@ public class Question {
 	         NodeList numberList = doc.getElementsByTagName("number");
 	         
 	         for (int temp = 0; temp < numberList.getLength(); temp++) {
+	        	 Questions questions = new Questions();
 	             Node numberTag = numberList.item(temp);
 	             Element eElement = (Element) numberTag;
 	             
@@ -125,7 +126,8 @@ public class Question {
 	             questions.setChoice(choiceArray);
 	             
 	             //assign answer
-	             questions.setAnswer(Integer.parseInt(eElement.getElementsByTagName("ans").item(0).getTextContent()));
+	             questions.setAnswer(Integer.parseInt(eElement.getElementsByTagName("ans").item(0).getTextContent())-1);
+	             arrayList.add(questions);
 	          }
 		}
 		catch (Exception e) {
@@ -155,13 +157,5 @@ public class Question {
 		Question.answer = sc.nextInt();
 	}
 	
-	public static void main(String[] args) {
-		Question obj = new Question();
-		Questions question = new Questions();
-		
-		//System.out.print("Enter the number of questions to insert:");
-		//obj.recurse(sc.nextInt());
-		obj.fetchQuestion(question);
-	}
 
 }
