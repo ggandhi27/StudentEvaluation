@@ -114,28 +114,20 @@ public class Question {
 	             //assign question
 	             questions.setQuestion(eElement.getElementsByTagName("question").item(0).getTextContent());
 	             
-	             //assign choices
+	             //fetch choices
 	             int temp1 = eElement.getElementsByTagName("choice").getLength();
+	             String choiceArray[] = new String[temp1];
 	             for(int j = 0; j < temp1; j++) {
-	            	 questions.setChoice[j] = eElement.getElementsByTagName("choice").item(0).getTextContent());
+	            	choiceArray[j] = eElement.getElementsByTagName("choice").item(j).getTextContent();
 	             }
-	                
-	                System.out.println("First Name : " + eElement.getElementsByTagName("question").getLength());
-	                System.out.println("Nick Name : " 
-	                   + eElement
-	                   .getElementsByTagName("nickname")
-	                   .item(0)
-	                   .getTextContent());
-	                System.out.println("Marks : " 
-	                   + eElement
-	                   .getElementsByTagName("marks")
-	                   .item(0)
-	                   .getTextContent());
 	             
+	             //assign choices
+	             questions.setChoice(choiceArray);
+	             
+	             //assign answer
+	             questions.setAnswer(Integer.parseInt(eElement.getElementsByTagName("ans").item(0).getTextContent()));
 	          }
-			
 		}
-		
 		catch (Exception e) {
 	         e.printStackTrace();
 		}
