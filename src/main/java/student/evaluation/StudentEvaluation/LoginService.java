@@ -38,9 +38,11 @@ public class LoginService {
 
         File inputFile = new File("/tmp/"+username+".xml");
 //        File inputFile = new File("e:\\New folder\\"+username+".xml");
-        if(!inputFile.exists())
+        Document doc = this.getDocument(username);
+		
+        if(doc.equals(null)) {
         	return false;
-		Document doc = this.getDocument(username);
+        }
 		String pass;
 		NodeList nList = doc.getElementsByTagName("users");
 		Node node = nList.item(0);
