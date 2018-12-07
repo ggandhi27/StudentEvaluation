@@ -14,40 +14,10 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-apply plugin: "com.adarshr.test-logger
-testlogger {
-    // pick a theme - mocha, standard, plain, mocha-parallel, standard-parallel or plain-parallel
- 	theme 'standard'
-
-    // set to false to disable detailed failure logs
-    showExceptions true
-
-    // set threshold in milliseconds to highlight slow tests
-    slowThreshold 2000
-
-    // displays a breakdown of passes, failures and skips along with total duration
-    showSummary true
-
-    // set to false to hide passed tests
-    showPassed true
-
-    // set to false to hide skipped tests
-    showSkipped true
-
-    // set to false to hide failed tests
-    showFailed true
-
-    // enable to see standard out and error streams inline with the test results
-    showStandardStreams false
-
-    // set to false to hide passed standard out and error streams
-    showPassedStandardStreams true
-
-    // set to false to hide skipped standard out and error streams
-    showSkippedStandardStreams true
-
-    // set to false to hide failed standard out and error streams
-    showFailedStandardStreams true
+test {
+  testLogging {
+    exceptionFormat = 'full'
+  }
 }
 
 group = 'student.evaluation'
@@ -67,6 +37,4 @@ dependencies {
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile group: 'junit', name: 'junit', version: '4.12'
-    classpath ('com.adarshr:gradle-test-logger-plugin:1.6.0')
-
 }
