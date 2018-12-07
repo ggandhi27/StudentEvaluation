@@ -20,6 +20,7 @@ public class LoginService {
 		
 		try {
 	         File inputFile = new File("/tmp/"+username+".xml");
+//	         File inputFile = new File("e:\\New folder\\"+username+".xml");
 	         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	         Document doc = dBuilder.parse(inputFile);
@@ -34,8 +35,12 @@ public class LoginService {
 	
 	public boolean checkPassword(String username,String password) {
 		
+
+        File inputFile = new File("/tmp/"+username+".xml");
+//        File inputFile = new File("e:\\New folder\\"+username+".xml");
+        if(!inputFile.exists())
+        	return false;
 		Document doc = this.getDocument(username);
-		
 		String pass;
 		NodeList nList = doc.getElementsByTagName("users");
 		Node node = nList.item(0);

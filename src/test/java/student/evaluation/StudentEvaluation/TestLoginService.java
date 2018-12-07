@@ -9,7 +9,9 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.util.Random;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
@@ -44,6 +46,8 @@ public class TestLoginService {
 		
 		try{
 			BufferedReader p = new BufferedReader(new InputStreamReader(new FileInputStream("/tmp/TestFile.csv")));
+//			BufferedReader p = new BufferedReader(new InputStreamReader(new FileInputStream("e:\\TestFile.csv")));
+			
 			LoginService loginService = new LoginService();
 			String str;
 			String username,password;
@@ -71,6 +75,7 @@ public class TestLoginService {
 			
 		}
 		catch(Exception e) {
+			e.printStackTrace();
 			fail(e.toString());
 		}
 		
