@@ -94,6 +94,7 @@ public class TestRegistrationService {
 		String str;
 		try{
 			FileWriter file = new FileWriter("/tmp/TestFile.csv");
+//			FileWriter file = new FileWriter("e:\\TestFile.csv");
 			BufferedWriter bufferedWriter =
 	                new BufferedWriter(file);
 			
@@ -116,10 +117,10 @@ public class TestRegistrationService {
 				ans = this.getName();
 				ques = this.getQuestion();
 				email = this.getEmail();
-				str = uname+','+fname+','+lname+','+pass+','+ans+','+ques+','+email+','+"True";
+				str = uname+','+fname+','+lname+','+pass+','+ans+','+ques+','+email+','+"true";
 				bufferedWriter.write(str);
 				bufferedWriter.newLine();
-				str = uname+','+fname+','+lname+','+pass+','+ans+','+ques+','+email+','+"False";
+				str = uname+','+fname+','+lname+','+pass+','+ans+','+ques+','+email+','+"false";
 				bufferedWriter.write(str);
 				bufferedWriter.newLine();
 				
@@ -134,11 +135,14 @@ public class TestRegistrationService {
 
 	@Test
 	public void test() {
-		RegisterService registerService = new RegisterService();
-		this.createTestCases();
+	RegisterService registerService = new RegisterService();
+		TestRegistrationService obj = new TestRegistrationService();
+		obj.createTestCases();
+		
 		try {
 			
 			BufferedReader p = new BufferedReader(new InputStreamReader(new FileInputStream("/tmp/TestFile.csv")));
+//			BufferedReader p = new BufferedReader(new InputStreamReader(new FileInputStream("e:\\TestFile.csv")));
 			String str;
 			while((str=p.readLine())!=null) {
 				String strArr[] = str.split(",");

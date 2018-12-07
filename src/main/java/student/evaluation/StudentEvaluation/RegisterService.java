@@ -23,7 +23,8 @@ public class RegisterService {
 		
 		try {
 			
-				File files = new File("/tmp/"+user.getUname()+".xml");
+			File files = new File("/tmp/"+user.getUname()+".xml");
+//			File files = new File("e:\\New folder\\"+user.getUname()+".xml");
 	         
 	         if (files.exists())
 	        	 throw new Exception();
@@ -113,6 +114,7 @@ public class RegisterService {
 	         Transformer transformer = transformerFactory.newTransformer();
 	         DOMSource source = new DOMSource(doc);
 	         StreamResult result = new StreamResult(new File("/tmp/"+user.getUname()+".xml"));
+//	         StreamResult result = new StreamResult(new File("e:\\New folder\\"+user.getUname()+".xml"));
 	         System.out.println("File created");
 	         transformer.transform(source, result);
 	        
