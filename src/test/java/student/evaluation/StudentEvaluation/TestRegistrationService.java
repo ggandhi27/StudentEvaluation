@@ -23,9 +23,9 @@ import entity.User;
 
 public class TestRegistrationService {
 	
-	@Autowired
-	private RegisterService registerService;
-	
+//	@Autowired
+//	private RegisterService registerService;
+//	
 	private String getQuestion() {
 		
 		String questions[] = {"What is your first school name?",
@@ -134,7 +134,7 @@ public class TestRegistrationService {
 
 	@Test
 	public void test() {
-		
+		RegisterService registerService = new RegisterService();
 		this.createTestCases();
 		try {
 			
