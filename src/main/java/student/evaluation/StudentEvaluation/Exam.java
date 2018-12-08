@@ -8,10 +8,19 @@ import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Controller
-public class J_exam {
+public class Exam {
+	
+	@RequestMapping(value="/C_exam",method=RequestMethod.GET)
+	public ModelAndView C_exam() {
+		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
+		templateResolver.setPrefix("/templates/");
+        templateResolver.setSuffix(".html");
+		ModelAndView model=new ModelAndView("C_exam");
+		return model;
+	}
 	
 	@RequestMapping(value="/J_exam",method=RequestMethod.GET)
-	public ModelAndView Dash() {
+	public ModelAndView J_exam() {
 		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
 		templateResolver.setPrefix("/templates/");
         templateResolver.setSuffix(".html");
