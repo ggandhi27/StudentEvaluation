@@ -40,7 +40,7 @@ public class LoginService {
 //        File inputFile = new File("e:\\New folder\\"+username+".xml");
         Document doc = this.getDocument(username);
 		
-        if(doc.equals(null)) {
+        if(doc==(null)) {
         	return false;
         }
 		String pass;
