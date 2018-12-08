@@ -5,8 +5,7 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	TestRegistrationService.class,
-	TestLoginService.class
+	TestRegistrationService.class
 })
 
 public class FeatureTestSuite {
