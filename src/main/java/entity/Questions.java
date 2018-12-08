@@ -1,6 +1,6 @@
 package entity;
 
-public class Question {
+public class Questions {
 
 	private String question;
 	private String choice[] = new String[4];
