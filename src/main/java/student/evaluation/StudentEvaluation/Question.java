@@ -88,7 +88,7 @@ public class Question {
 	         Transformer transformer = transformerFactory.newTransformer();
 	         DOMSource source = new DOMSource(doc);
 	         
-	         StreamResult result = new StreamResult(new File("E:\\Spring_suite_workspace\\JavaXml\\src\\com\\javaxml\\xc.xml"));
+	         StreamResult result = new StreamResult(new File("src\\com\\javaxml\\c.xml"));
 	         transformer.transform(source, result);
 		}
 			catch (Exception e) {
@@ -100,7 +100,7 @@ public class Question {
 	
 		ArrayList<Questions> arrayList = new ArrayList<Questions>();
 		try {
-			 File inputFile = new File("E:\\Spring_suite_workspace\\JavaXml\\src\\com\\javaxml\\xc.xml");
+			 File inputFile = new File("src\\com\\javaxml\\c.xml");
 	         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	         Document doc = dBuilder.parse(inputFile);
