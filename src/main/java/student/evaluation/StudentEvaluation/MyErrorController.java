@@ -11,7 +11,7 @@ public class MyErrorController implements ErrorController {
 	@RequestMapping(value="/error",method=RequestMethod.GET)
 	public String errorMapping()
 	{
-		return "redirect:/";
+		return "error";
 	}
 
 	@Override
