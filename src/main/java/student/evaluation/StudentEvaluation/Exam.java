@@ -1,4 +1,8 @@
 package student.evaluation.StudentEvaluation;
+import student.evaluation.StudentEvaluation.Question;
+import entity.Questions;
+
+import java.util.ArrayList;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +19,11 @@ public class Exam {
 		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
 		templateResolver.setPrefix("/templates/");
         templateResolver.setSuffix(".html");
+        ArrayList<Questions> arraylist = new ArrayList<Questions>();
+    	Question ques = new Question();
+    	arraylist=ques.fetchQuestion();
 		ModelAndView model=new ModelAndView("C_exam");
+		model.addObject("questions",arraylist);
 		return model;
 	}
 	
@@ -24,8 +32,20 @@ public class Exam {
 		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
 		templateResolver.setPrefix("/templates/");
         templateResolver.setSuffix(".html");
-        
+        ArrayList<Questions> arraylist = new ArrayList<Questions>();
+    	Question ques = new Question();
+    	arraylist=ques.fetchQuestion();
 		ModelAndView model=new ModelAndView("J_exam");
+		model.addObject("questions",arraylist);
+		return model;
+	}
+	@RequestMapping(value="/result",method=RequestMethod.POST)
+	public ModelAndView Result() {
+		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
+		templateResolver.setPrefix("/templates/");
+        templateResolver.setSuffix(".html");
+        
+		ModelAndView model=new ModelAndView("result");
 		return model;
 	}
 }

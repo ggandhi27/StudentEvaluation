@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Controller
-@SessionAttributes("user")
 public class Dashboard {
 	
 	@RequestMapping(value="/dash",method=RequestMethod.GET)
@@ -20,6 +19,7 @@ public class Dashboard {
         templateResolver.setSuffix(".html");
         
 		ModelAndView model=new ModelAndView("dashboard");
+		model.addObject("uname","Ankit");
 		return model;
 	}
 }

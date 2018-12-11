@@ -100,7 +100,7 @@ public class Question {
 	
 		ArrayList<Questions> arrayList = new ArrayList<Questions>();
 		try {
-			 File inputFile = new File("src\\com\\javaxml\\c.xml");
+			 File inputFile = new File("G:\\major1\\StudentEvaluation\\src\\main\\java\\student\\evaluation\\StudentEvaluation\\c.xml");
 	         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	         Document doc = dBuilder.parse(inputFile);
