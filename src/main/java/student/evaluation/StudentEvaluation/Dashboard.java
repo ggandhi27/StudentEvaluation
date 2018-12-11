@@ -1,5 +1,7 @@
 package student.evaluation.StudentEvaluation;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,12 +16,20 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 public class Dashboard {
 	
 	@RequestMapping(value="/dash",method=RequestMethod.GET)
-	public ModelAndView Dash() {
+	public ModelAndView Dash(HttpSession session) {
 		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
 		templateResolver.setPrefix("/templates/");
         templateResolver.setSuffix(".html");
         
-		ModelAndView model=new ModelAndView("dashboard");
+        entity.User user = (entity.User)session.getAttribute("user");
+    	ModelAndView model;
+        if(user==null) {
+        	model = new ModelAndView("login");
+        }
+        else {
+        	model=new ModelAndView("dashboard");
+        }
+		
 		return model;
 	}
 }
