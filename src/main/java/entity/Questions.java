@@ -5,6 +5,7 @@ public class Questions {
 	private String question;
 	private String choice[] = new String[4];
 	private int answer;
+	private int id;
 	public String getQuestion() {
 		return question;
 	}
@@ -22,6 +23,12 @@ public class Questions {
 	}
 	public void setAnswer(int answer) {
 		this.answer = answer;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }
