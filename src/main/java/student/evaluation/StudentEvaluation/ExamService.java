@@ -8,8 +8,12 @@ public class ExamService {
 		ArrayList<Questions> arraylist=new ArrayList<Questions>();
 		Question ques=new Question();
 		arraylist=ques.fetchQuestion();
-		while(ques!=null) {
-			
+		Iterator<Questions> iterator = arraylist.iterator();
+		while(iterator.hasNext()) {
+			Questions question = iterator.next();
+			if(examresult.containsValue(question.getAnswer())) {
+				res++;
+			}
 		}
 		return res;
 	}

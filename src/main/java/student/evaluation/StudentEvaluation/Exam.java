@@ -47,8 +47,11 @@ public class Exam {
 		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
 		templateResolver.setPrefix("/templates/");
         templateResolver.setSuffix(".html");
-        
+        ExamService exs = new ExamService();
+        int marks;
+        marks=exs.checkAnswer(examresult);
 		ModelAndView model=new ModelAndView("result");
+		model.addObject("marks", marks);
 		return model;
 	}
 }
