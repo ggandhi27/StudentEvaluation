@@ -221,8 +221,20 @@ to excessive debugging.
 Modular Representation of the Project :
 ++++++++++++++++++++++++++++++++++++++++++
 
-Module 1: Gather requirements and specifications for the web application.
+Module 1: Gather requirements for the web application.
 -------------------------------------------------------------------------
+
+Requirements gathering is the most important phase of application design. It is said
+that a good start is half a job done. This phase is that start for the software 
+development lifecycle. If this phase is not executed well then it will affect all the
+phases following it.
+
+To gather the requirements for this project we have tried to communicate with the
+first year students of B.Tech Computer Science and asked them what kind of software
+do they need which can help them to get good grades. We have also circulated a google
+form to get their feedbacks and after performing such rigrous operations of requirement
+gathering we came to the conclusion that we can develop a website which help them
+to prepare for the online quizes and get good grades.
 
 
 Module 2: Setting up the Deployment pipeline
@@ -396,4 +408,9 @@ Travis will automatically fetch the updated state of the repository from the git
 and start performing the build operation on the code. Once the code is successfully
 built by Travis, it will deploy the code on the heroku application mentioned in the
 .travis.yml file.
+
+------------------------------------------------------------------------------------
+
+Module 3: Design and Analysis
+----------------------------------------------------------------
 
