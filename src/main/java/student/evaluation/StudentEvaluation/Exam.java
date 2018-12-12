@@ -3,8 +3,11 @@ import student.evaluation.StudentEvaluation.Question;
 import entity.Questions;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -39,8 +42,8 @@ public class Exam {
 		model.addObject("questions",arraylist);
 		return model;
 	}
-	@RequestMapping(value="/result",method=RequestMethod.POST)
-	public ModelAndView Result() {
+	@PostMapping(value="/result")
+	public ModelAndView Result(@ModelAttribute(value="examresult") HashMap<Integer,String> examresult ) {
 		ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
 		templateResolver.setPrefix("/templates/");
         templateResolver.setSuffix(".html");

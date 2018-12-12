@@ -23,32 +23,32 @@
 <ul class = "list-group">
     <li class = "list-group-item">
           <div class="radio">
-            <input type="radio" id="radio" />
+            <input type="radio" id="radio" th:name="${'examresult['+ question.id +']'" th:value="${question.choice[0]}" />
             <label for="radio" th:text="${question.choice[0]}"></label>
         </div>
     </li>
     <li class = "list-group-item">
           <div class="radio">
-            <input type="radio" id="radio" />
+            <input type="radio" id="radio" th:name="${'examresult['+ question.id +']'" th:value="${question.choice[1]}" />
             <label for="radio" th:text="${question.choice[1]}">
             </label>
         </div>
     </li>
     <li class = "list-group-item">
           <div class="radio">
-            <input type="radio" id="radio" />
+            <input type="radio" id="radio" th:name="${'examresult['+ question.id +']'" th:value="${question.choice[2]}" />
             <label for="radio" th:text="${question.choice[2]}"> </label>
         </div>
     </li>
     <li class = "list-group-item">
           <div class="radio">
-            <input type="radio" id="radio" />
+            <input type="radio" id="radio" th:name="${'examresult['+ question.id +']'" th:value="${question.choice[3]}" />
             <label for="radio" th:text="${question.choice[3]}"></label>
         </div>
     </li>	
    </ul>
    </div>        
-                          
+   <input type="submit" value="Submit" />
 </div>
 </form>
 </div>
