@@ -171,16 +171,48 @@ rather developing the code.
 2) Run all the test and see if the new test fails
 **************************************************
 
+After writing all the test cases execute those tests. As expected the test cases
+will fail as the code for which the test cases are written is not written yet.
+
 3) Write the code
 ******************
+
+Once the test cases are written then start developing the code for the project.
+The code should be written now with the approach of passing all the test cases
+written for the particular feature. The test cases must be passed in elegant way.
+At this point of development, the code is just written in order to pass the test
+suites and the code must not be written beyond the functionality. The code will 
+be improved at step 5.
 
 4) Run tests
 **************
 
+Once the code is developed, again the test suites must be executed to check that
+the code written is working perfectly and has not degraded the previously written
+code. The code written must not break the already written code and must work fine 
+with it.
+
 5) Refactor code
 *****************
 
+This is the phase when the code is refractored and arranged properly within the
+repository. The code has grown till now and it must be cleaned properly as we must
+try to ignore the duplicacy of the code. The code is moved and arranged to the 
+location where the code belongs more logically. Object, class, module, variable and
+method names should clearly represent their current purpose and use, as extra 
+functionality is added. As features are added, method bodies can get longer and 
+other objects larger. They benefit from being split and their parts carefully named
+to improve readability and maintainability, which will be increasingly valuable later 
+in the software lifecycle. Inheritance hierarchies may be rearranged to be more 
+logical and helpful, and perhaps to benefit from recognized design patterns.
+
 6) Repeat
 **********
+Starting with another new test, the cycle is then repeated to push forward the 
+functionality. The size of the steps should always be small, with as few as 1 to 
+10 edits between each test run. If new code does not rapidly satisfy a new test, 
+or other tests fail unexpectedly, the programmer should undo or revert in preference 
+to excessive debugging.
 
+-----------------------------------------------------------------------------------------
 
