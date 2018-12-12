@@ -1,0 +1,47 @@
+Introduction:
++++++++++++++++
+
+The Bohemian approach of developing, testing and deploying the softwares
+is not very efficient.
+The process of developing and releasing the software updates can be
+complex and if not handled at the right time, it me lead the developer 
+and his team into a huge problem. To avoid such kind of issues while 
+developing a software and to develop, test and release the software updates
+at the right time there are different strategies of software development
+and testing, which me help the developers to meticulously code the software
+and to deploy them with more efficiency.
+
+Continuous Integration:
+------------------------
+
+When a software is developed by meticulously following the techniques of
+continuous integration the developers are supposed to merge or integrate 
+their branches frequently, where the frequency can be several times a day.
+Continuous Integration encourages us to avoid the strategy of developing
+different modules and features of a project in isolation and to integrate
+the complete code at the end of the development cycle. The basic approach 
+behind the strategy of Continuous Integration is to reduce the cost of 
+integration of code by applying the process of integration at an early 
+stage of development and that too quite frequent, so that all the issues
+which are suspected to occur in the project can be avoided and can be considered
+at an early stage of development. The conflicts which can occur between
+the boundaries of new and existing code, can be discovered by the developers
+at an early stage of development, as at that time it is relatively easy to
+reconcile. Once all the conflicts are resolved successfully, the developers
+can go on with the further development of the code with the complete
+confidence that the new code which they will be writing, will show no conflicts
+and will respect the existing code base.
+
+The Integration practices with respect to the Continuous Integration helps us
+ton automate the build process of the application and to automate the testing process.
+When a developer merges the code with the main branch or on the basis of the 
+configuration mentioned by the user at the time of pushing the code into the 
+Version Control System, an automates process is kicked off which initiates the 
+build process of the code written the repository of the version control system.
+At the time of building the repository, the automated test suites are executed
+and automation testing is performed. If the test cases fails in that case the 
+build also fails and the team is notified regarding the failure of the build,
+so that the team can work together to fix the build.
+
+The main purpose of the Continuous Integration is to simplify the process of 
+integration of code 
