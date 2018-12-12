@@ -127,6 +127,9 @@ public class Question {
 	             
 	             //assign answer
 	             questions.setAnswer(Integer.parseInt(eElement.getElementsByTagName("ans").item(0).getTextContent())-1);
+		     //assign id
+	             questions.setId(temp + 1);
+			 
 	             arrayList.add(questions);
 	          }
 		}
