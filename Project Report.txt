@@ -216,3 +216,138 @@ to excessive debugging.
 
 -----------------------------------------------------------------------------------------
 
+
+++++++++++++++++++++++++++++++++++++++++++
+Modular Representation of the Project :
+++++++++++++++++++++++++++++++++++++++++++
+
+
+Module 1: Setting up the Deployment pipeline
+-----------------------------------------------
+
+Deployment Pipeline is a path composing of the tools and softwares which are used
+during the development, testing and deployment phase of software development.
+The different tools can be Integrated Development Environment, Version Control 
+System, Continuous Integration Engine, Cloud Deployment Platform, Code Building
+tool and Development Framework.
+
+The tools which are used for setting up the Deployment Pipeline for our project are:
+
+# Spring Tool Suite (Integrated Development Environment for Java based Spring applications)
+[Ref: https://spring.io/tools3/sts/all]
+
+# Git, Github, Git Kraken (Version Control System)
+[Ref: https://git-scm.com/downloads]
+[Ref: https://github.com/]
+[Ref: https://www.gitkraken.com/download]
+
+# Travis (Continuous Integration Engine)
+[Ref: https://Travis-ci.org/]
+
+# Heroku (Cloud Deployment Platform)
+[Ref: https://www.heroku.com/]
+
+# Gradle (Code Building tool)
+[Ref: https://gradle.org/]
+
+# Spring (Java Development Framework)
+[Ref: https://spring.io/]
+
+Github:
+--------
+
+Github Inc is a version control system, which is web hosted and provides us different
+functionalities like version controlling, bug tracking, feature requests, task management,
+and wikis for the project.
+
+*Git* is a client for the github. It is a distributed version control system for the
+systems and can be used for managing the code and its versions at the local system level.
+
+*Git Kraken* is nothing but a GUI based client for the git repositories clone to the
+local system and helps us in managing the different commits and branches of github,
+providing us a GUI based representation for the flow of code.
+
+************************************
+*Step 1: Setting up git repository.* 
+************************************
+
+The first and foremost step in setting up a deployment pipeline is to create a 
+repository on the github and to clone it on our systems.
+
+&& Attach a screenshot for the creation of a git repository on github.
+
+Our repository can be cloned to the system with the help of following GIT command
+
+% git clone https://github.com/ggandhi27/StudentEvaluation.git %
+
+**********************************************************
+*Step 2: Setting up Travis Continuous Integration Engine *
+**********************************************************
+
+Travis CI:
+-----------
+
+Travis is a free open source, hosted, distributed Continuous Integration tool which
+provides us the service of building and testing the code which is hosted on github.
+To initiate the building of the application on the Travis Engine, we have to add a
+configuration file named ".travis.yml" along with the code uploaded to the github
+repository.
+
+
+After creating the github repository, we have to login to the Travis-ci.org website,
+and link our github account to Travis. One signup on Travis with the help of their
+github account as well.
+
+&& Attach a screenshot of linking the Travis engine with the github account.
+
+
+
+After linking the github account with the Travis account, go to the travis dashboard
+and activate the github repository for the Travis to build.
+
+&& Attach screenshot of the repository activation screen.
+
+Once the repository is activated for performing the build, we have to create a file
+name ".travis.yml" in the git repository which we have created.
+
+Just mention 
+
+"""
+language: java
+jdk: oraclejdk8
+"""
+
+In the .travis.yml file and save the file. The above two lines of code tells the 
+Travis CI engine that the repository contains the code written in java programming
+language and the jdk (Java Development Kit) version which will be required for compiling
+and executing the code will be oraclejdk8. These two attributes for the file may 
+vary according to the language and the compiler versions which will be required 
+for that particular language suite.
+
+Once the file is created and saved in the repository, create commit in the git 
+repository and push the code to the github.
+
+Commands for creating the commit and pushing the code to the git hub are.
+
+% git add .travis.yml %
+% git commit -m ".travis.yml configuration file for travis is added" %
+% git push %
+
+When the git push command is executed, it will ask for the username and the password.
+Once the username and password is authenticated, the commit created will be pushed
+to the github and at the same time a build will be initiated in Travis CI corresponding
+to the code pushed.
+
+&& Attach a screen shot for the code build for the first commit pushed.
+
+
+******************************************************
+*Step 3: Setting up Heroku Cloud Deployment platform.*
+******************************************************
+
+Heroku is a cloud deployment platform which provides us free resources to some 
+extent to deploy and test applications.
+
+As we are going to use gradle as a build tool for our application, hence we have to
+follow the following steps for the deployment of a gradle application on Heroku.
+
