@@ -1,6 +1,7 @@
 package student.evaluation.StudentEvaluation;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -11,6 +12,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import entity.Tests;
 import entity.User;
 
 @Service
@@ -65,6 +67,8 @@ public class LoginService {
 		NodeList nList = doc.getElementsByTagName("users");
 		Node node = nList.item(0);
 		Element element  = (Element)node;
+		ArrayList<Tests> testList = new ArrayList<Tests>();
+		
 
 		user.setUname(element.getElementsByTagName("uname").item(0).getTextContent());
 		user.setPassword(element.getElementsByTagName("password").item(0).getTextContent());
@@ -74,6 +78,15 @@ public class LoginService {
 		user.setAnswer(element.getElementsByTagName("answer").item(0).getTextContent());
 		user.setEmail(element.getElementsByTagName("email").item(0).getTextContent());
 		
-		return user;
+		for(int i = 0; i<Integer.parseInt(element.getElementsByTagName("counter").item(0).getTextContent()); i++) {
+			Tests test  = new Tests();
+			test.setName(element.getElementsByTagName("name").item(i).getTextContent());
+			test.setMarks(Integer.parseInt(element.getElementsByTagName("marks").item(i).getTextContent()));
+			test.setTime(Integer.parseInt(element.getElementsByTagName("time").item(i).getTextContent()));
+			testList.add(test);
+		}
+		
+		user.setTestList(testList);
+		return user ;
 	}
 }

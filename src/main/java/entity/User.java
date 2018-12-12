@@ -127,6 +127,14 @@ public class User {
 		this.setEmail("dasf@gmail.com");
 		this.setCounter(0);
 	}
+
+	public ArrayList<Tests> getTestList() {
+		return testList;
+	}
+
+	public void setTestList(ArrayList<Tests> testList) {
+		this.testList = testList;
+	}
 	
 	
 	
