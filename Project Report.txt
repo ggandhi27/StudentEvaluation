@@ -14,6 +14,8 @@ and to deploy them with more efficiency.
 Continuous Integration:
 ------------------------
 
+Reference : https://www.linkedin.com/pulse/introduction-continuous-integration-delivery-rajesh-gurram
+
 When a software is developed by meticulously following the techniques of
 continuous integration the developers are supposed to merge or integrate 
 their branches frequently, where the frequency can be several times a day.
@@ -44,4 +46,82 @@ build also fails and the team is notified regarding the failure of the build,
 so that the team can work together to fix the build.
 
 The main purpose of the Continuous Integration is to simplify the process of 
-integration of code 
+integration of different branches of the repository at an early stage of development
+to reduce the integration cost and to fix the defects as early as possible in the
+development cycle. It makes sure that the system we are trying to build is robust,
+automated and fast.
+------------------------------------------------------------------------------------------
+
+
+Continuouos Delivery:
+------------------------
+
+Reference: https://www.linkedin.com/pulse/introduction-continuous-integration-delivery-rajesh-gurram
+
+The process of Continuous Integration leads us to the process of Continuous Delivery.
+Using Continuous Integration the development team ensures that they can reduce the
+integration cost by integrating the code branches of the repository at an early stage
+of development, whereas in the process of Continuous Delivery, the development team
+tries to maintain a deployable code at the main branch i.e.; the production ready code.
+It ensures us that the code base is always in a deployable state , which makes the 
+releasing of code as an unremarkable event, as the new releases can be brought
+to the production environment without any complicated coordination or the late stage
+testing.
+
+Continuous Delivery make the use of the deployment pipeline of which the process
+of Continuous Integration is an essential part. A deployment pipeline is an automated
+system that executes the test cases on the build increasingly and in a sequence
+of stages. Continuous Delivery picks up where the Continuous Integration leaves
+in the deployment pipeline.
+
+When the code is passed on for building and the test cases are performed on
+the code then the test cases are either passed or the test cases are failed
+which raises an alert to the development team to perform the fix operation 
+on the build. This process occurs at the each stage of development. Once the
+build is passed then the build is deployed to the environment which mirrors
+the production environment as exact as possible. This deployment helps us to
+test the build, the deployment process and the environment of the production
+altogether. This pipepline ends when the build is deployed to the production
+environment finally.
+------------------------------------------------------------------------------------------
+
+Continuous Deployment:
+------------------------
+
+Reference: https://www.linkedin.com/pulse/introduction-continuous-integration-delivery-rajesh-gurram
+
+Continuous Delivery is an initial process for the Continuouos Deployment which
+deals with the automation of the deployment process by removing the need for the
+human intervention for making decisions regarding choice of what and when to 
+deploy to the production environment. It deploys everything that has successfully 
+passed the delivery pipeline. Though the deployment system deploys everything 
+which has passed the delivery pipepline, still we can implement new features 
+for all the users or a subset of users of the application at any point of time
+later in the deployment process. It helps us to deploy the new features at the 
+runtime for the customers quickly and removes all sort of confusions and bugs 
+which are present in the current release of the system.
+
+The Continuous Deployment can cause be a source of some of sort of tension for the 
+organisations who are worried about redesigning the workflow of the automation
+system for the organization. The trade-off offered by the automated deployment is 
+sometimes considered to be too dangerous for the payoff they provide. 
+
+Continuous Deployment always follows the best practises and helps us to implement
+the limited testing into the production as the code is already built and tested
+at the time of building the code in the environment similar to the production. 
+Developers must take the complete responsibility of the code which they are about
+to deploy finally into the production environment and must ensure that their code
+is well designed and tested. This gives the development team the complete authority
+to decide that what and when to commit to the main branch and what and when to 
+deploy to the production environment.
+
+Feedback is must for any organization whether it is an IT organization or not.
+Continuous Deployment helps us to get the early feedbacks from the users on the
+application which is deployed. Features can be immidiately made available to the 
+users. This will help the team to catch most of the defects and exceptions into
+code at an early stage, before they tend to move the development into an 
+uproductive direction. This is done because of the defects and bugs are not 
+caught at an early stage then this might lead us to a bigger issue at the later
+stages in the development lifecycle of the application.
+------------------------------------------------------------------------------------
+
