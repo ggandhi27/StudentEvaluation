@@ -125,3 +125,62 @@ caught at an early stage then this might lead us to a bigger issue at the later
 stages in the development lifecycle of the application.
 ------------------------------------------------------------------------------------
 
+Test Deriven Development:
+--------------------------
+
+Contrary to the conventional approach of software development where the code is
+developed first and then the testing is performed on it to check the legibility 
+of the code that is written, the Test Driven Development asks us to divide the 
+complete project into smaller stories or epics and write the test cases for a
+particular module against its requirements. Once the test cases are made, then 
+the development process it initiated. Once the developed code passes all the
+test cases which have been written for the module, then the code which is developed
+is accepted. The testing of the developed code is automated with the help of the
+Continuous Integration engines which helps us to build the developed code and
+perform the testing on it in an environment which is similar to the production
+environment. This approach of software development helps the developer to design
+efficient code and to build confidence for the developed code.
+
+American software engineer Kent Beck, who is credited with having developed or 
+"rediscovered" the technique, stated in 2003 that TDD encourages simple designs
+and inspires confidence. 
+
+[Ref: Kent Beck (May 11, 2012). "Why does Kent Beck refer to the 
+"rediscovery" of test-driven development?". Retrieved December 1, 2014. ]
+[Ref: Beck, K. Test-Driven Development by Example, Addison Wesley - Vaseem, 2003 ]
+
+
+According to the book Test-Driven Development by Example,[Ref: Beck, K. Test-Driven Development by Example, Addison Wesley - Vaseem, 2003 ]
+the following sequence of steps can be used to successfully follow this way of development :
+
+1) Add test:-
+**************
+
+Developer must have the clear understanding of the requirements and the specifications
+of features which he is supposed to develop the code for. To get a clear cut understanding
+of the requirement and specifications, the developer must be well versed with the
+use cases and the user stories and then decide that exceptional conditions. Once
+the requirements and the specifications are clear to the developer, then he can 
+start writting the test cases for those features. These test cases infact can be
+the improved version of the previously written test cases.
+
+This development technique is actually different from the traditional unit testing
+approach as in this case we are focus on the requirement for writting the test cases
+rather developing the code.
+
+2) Run all the test and see if the new test fails
+**************************************************
+
+3) Write the code
+******************
+
+4) Run tests
+**************
+
+5) Refactor code
+*****************
+
+6) Repeat
+**********
+
+
