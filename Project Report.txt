@@ -568,3 +568,19 @@ IP addresses are ephemeral - the specific pod that they are referencing may be a
 another Pod IP address on restart. Instead, they should use a reference to a Service, 
 which holds a reference to the target pod at the specific Pod IP Address. 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-----------------------------------------------------------------------------------
+
+Travis:
++++++++
+
+Travis CI introduces automated builds which makes it easier for project developers
+to develop their projects while testing it side by side. Whenever the developer pushes 
+their code in their respective repository online then the builds are automatically 
+triggered. Travis CI opens up the door for CI which means continuous integration which 
+basically means to develop code and test it without much overhead borne by the user. 
+This platform is free to use by all open source projects  that are hosted upon GITHUB. 
+To activate the automatic builds on the TRAVIS a configuration file called travis.yml 
+has to be made which holds information about what branch to use for the pipeline.
+
