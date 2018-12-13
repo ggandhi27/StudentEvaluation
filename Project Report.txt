@@ -411,8 +411,64 @@ built by Travis, it will deploy the code on the heroku application mentioned in 
 
 ------------------------------------------------------------------------------------
 
-Module 3: Design and Analysis
-----------------------------------------------------------------
+Module 3: Designing application according to the requirements gathered
+-----------------------------------------------------------------------
+
+Our application will be a platform free for the students to test their skills on the
+programming languages like Java and C. The application will contain Multiple Choice
+type questions tests where the users of the application can anytime login into the
+application and can test their skills on the language of their own choice. It will be
+a web based application which will be accessible to the users of the application 
+from anywhere over the internet from their web browser.
+
+First of all the user has to get him registered on the application and once the
+user is registered in successfully he have to perform the login operation using
+the username and the password which he has chosen at the time of registering himself.
+
+Once the user is successfully logged in to the system he can choose any of the 
+languages available for which he has to give the test for. 
+
+As soon as the user selects the language, a test will begin for him. There will
+be 25 questions which can be answered by the user. 
+
+On the user dashboard there will be a tab where the user can check his marks for the
+previous tests which were submitted by the user.
+
+User must get a log out button to successfully end the session which he has created
+once he logs into the system.
+-----------------------------------------------------------------------------------
+
+Module 4: Generating Test Cases
+-------------------------------
+
+As we are using Test Driven Development approach for developing the application hence
+the test cases has to be generated prior to starting the development of the application.
+For generating the test cases for the application and to perform testing on the application
+we have used JUnit framework integrated with the gradle build tool. When the code
+is built in the continuous integration engine travis, at that time the test cases 
+are executed. If any of the test cases fails to execute then the build fails and 
+the developer must handle the issue which is causing the build to fail or else
+if the test cases passes, in that cases the code is built successfully and hence 
+we can perform further operations in the development.
+
+Module 5: Development of Application
+-------------------------------------
+
+To develop this application we have chosen Java as the programming language and 
+the Java Spring Framework as the framework for the development of the application.
+The code is divided into three types of classes i.e. Controller, Service and Entity.
+Controller classes are reponsible for accepting the request from the front end,
+Service classes contains the complete business logic for the application and 
+Entity classes are the classes which contains the object from the database.
+The development of the application must go on in accordance with the test cases which
+are developed at the time of the Test Case Generation. As soon as a feature is developed,
+it must be committed and pushed to the github. Once the code is pushed to the github,
+Travis fetches the complete repository and performs build operation on the code.
+At the time of building, the developed code is tested for the test cases generated.
+If all the test cases executes successfully, in that case the build is performed 
+successfully or else it fails. Developer must look after the issues which are causing 
+the test suites to fail.
+
 
 
 
@@ -528,6 +584,21 @@ lightweight than virtual machines. Containers are made from "pictures" that dete
 their exact substance. Pictures are frequently made by consolidating and changing 
 standard pictures downloaded from open archives.
 
+
+Docker from Minor 2:
+++++++++++++++++++++++
+Docker is a platform used to develop, ship and run applications. Docker provides isolation
+between running application and the infrastructure with the help of containers. Containers are
+light weight as they are run directly from within the host machine's kernel. [6]
+Next, we have docker engine which has 3 major components:
+1. A Server which is a daemon process.
+2. A Rest API which is used as an interface between programs and the daemon process.
+3.A Command line interface client. [6]
+Microservices are small autonomous services that work together to fulfill a business
+requirement.
+It is a method of developing software applications as a suite of small modular services,
+deployable in which services run unique process and communicates through a well-defined,
+lightweight mechanism to serve a business goal. [7]
 
 Kubernetes:
 ++++++++++++
