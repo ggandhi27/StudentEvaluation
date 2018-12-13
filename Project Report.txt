@@ -654,4 +654,9 @@ basically means to develop code and test it without much overhead borne by the u
 This platform is free to use by all open source projects  that are hosted upon GITHUB. 
 To activate the automatic builds on the TRAVIS a configuration file called travis.yml 
 has to be made which holds information about what branch to use for the pipeline.
+-------------------------------------------------------------------------------------
+
+
+Java Spring Framework:
++++++++++++++++++++++++
 
