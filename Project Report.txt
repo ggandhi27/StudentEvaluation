@@ -414,3 +414,157 @@ built by Travis, it will deploy the code on the heroku application mentioned in 
 Module 3: Design and Analysis
 ----------------------------------------------------------------
 
+
+
+-------------------------------------------------------------------------------------
+
+Literature Review:
+-------------------
+
+Containerization:
+++++++++++++++++++++
+
+[Ref: https://www.cio.com/article/2924995/software/what-are-containers-and-why-do-you-need-them.html]
+[Ref: https://containment.comodo.com/containerization/]
+
+Containerization is a technology which allows enterprises to run suspicious applications 
+in a separate environment without affecting other processes. Designed to increase 
+enterprise security, they also streamline enterprise IT operations.
+Containers are a solution to the problem of how to get software to run reliably when moved 
+from one computing environment to another. This could be from a developer's laptop to a test 
+environment, from a staging environment into production, and perhaps from a physical machine 
+in a data center to a virtual machine in a private or public cloud.
+A container consists of an entire runtime environment: an application, plus all its 
+dependencies, libraries and other binaries, and configuration files needed to run it, 
+bundled into one package. By containerizing the application platform and its dependencies, 
+differences in OS distributions and underlying infrastructure are abstracted away.
+A container may be only tens of megabytes in size. container technology is not new; it 
+has been built into Linux in the form of LXC for over 10 years, and similar operating 
+system level virtualization has also been offered by FreeBSD jails, AIX Workload 
+Partitions and Solaris Containers. 
+
+Spinbot version:
+-----------------
+Containerization is a technology which enables enterprises to run suspicious applications 
+
+in a different environment without influencing different procedures. Intended to increment 
+
+enterprise security, they additionally streamline enterprise IT tasks. 
+
+Containers are an answer for the issue of how to motivate programming to run dependably when moved 
+
+starting with one figuring environment then onto the next. This could be from an engineer's workstation to a test 
+
+environment, from an organizing environment into creation, and maybe from a physical machine 
+
+in a server farm to a virtual machine in a private or open cloud. 
+
+A holder comprises of a whole runtime environment: an application, in addition to all its 
+
+conditions, libraries and different pairs, and setup records expected to run it, 
+
+packaged into one bundle. By containerizing the application stage and its conditions, 
+
+contrasts in OS disseminations and hidden infrastructure are disconnected away. 
+
+A holder might be just many megabytes in size. compartment technology isn't new; it 
+
+has been incorporated with Linux as LXC for more than 10 years, and comparative working 
+
+framework level virtualization has likewise been offered by FreeBSD correctional facilites, AIX Workload 
+
+Segments and Solaris Containers.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Containerization vs Virtualization:
+++++++++++++++++++++++++++++++++++++
+
+[Ref: https://mainframedebate.com/2015/03/20/virtualization-vs-containerization/]
+
+Containers give separated runtime environments to applications: the whole client 
+space environment is solely displayed to the holder, and any progressions to it 
+don't affect other containers' environments. To give this seclusion, a blend of 
+OS-based components is utilized: Linux name spaces are utilized for disengagement 
+and checking instrument. Document framework mounts characterize what records are 
+open to the holder. cgroups characterize asset utilization of containers. Still 
+all containers share a similar OS part which can understand memory impression 
+efficiencies when indistinguishable libraries are utilized by different containers. 
+
+With framework virtualization, the hypervisor gives a full virtual machine to a 
+visitor: the whole OS picture including the part is currently devoted to the virtual 
+machine. CPU virtualization is utilized to furnish every visitor with a select perspective 
+of a full framework environment, and these instruments likewise guarantee seclusion from 
+different visitors. Hypervisor-based administration of virtual CPUs, memory and 
+I/O gadgets is utilized to characterize asset utilization of visitors.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Different types of Containerization tools:
++++++++++++++++++++++++++++++++++++++++++++
+
+Docker:
+++++++++
+
+[Ref: "Docker Releases". GitHub. Docker, Inc. August 22, 2018. Retrieved August 23, 2018. ]
+[Ref: "Docker source code". docs.docker.com. Docker, Inc. October 12, 2015. Retrieved October 24, 2015. ]
+[Ref: "Get started with Docker for Windows". docker.com. Retrieved September 27, 2018.]
+[Ref: O'Gara, Maureen (July 26, 2013). "Ben Golub, Who Sold Gluster to Red Hat, Now Running dotCloud". SYS-CON Media. Retrieved August 9, 2013. ]
+[Ref: Vivek Ratan (February 8, 2017). "Docker: A Favourite in the DevOps World". Open Source For U. Retrieved June 14, 2017. ]
+[Ref: "One home for all your apps". dotcloud.com. Archived from the original on May 17, 2014. Retrieved May 8, 2014.]
+
+Solomon Hykes started Docker in France as an internal project within dotCloud, a 
+platform-as-a-service company, with initial contributions by other dotCloud engineers 
+including Andrea Luzzardi and Francois-Xavier Bourlet.
+Docker is a computer program that performs operating-system-level virtualization, 
+also known as "containerization". Docker is utilized to run programming bundles 
+called "containers". Containers are secluded from one another and package their 
+own application, apparatuses, libraries and arrangement documents; they can 
+speak with one another through very much characterized channels. All containers 
+are controlled by a solitary working framework part and are consequently more 
+lightweight than virtual machines. Containers are made from "pictures" that determine 
+their exact substance. Pictures are frequently made by consolidating and changing 
+standard pictures downloaded from open archives.
+
+
+Kubernetes:
+++++++++++++
+
+[Ref: "One home for all your apps". dotcloud.com. Archived from the original on May 17, 2014. Retrieved May 8, 2014.]
+
+Kubernetes is an open-source system for automating deployment, scaling, and management 
+of containerized applications. It groups containers that make up an application into 
+logical units for easy management and discovery. Kubernetes builds upon 15 years of 
+experience of running production workloads at Google, combined with best-of-breed ideas 
+and practices from the community.
+
+[Ref:  https://blog.powerupcloud.com/autoscaling-based-on-cpu-memory-in-kubernetes-part-ii-fe2e495bddd4 ]
+[Ref: https://docs.bitnami.com/kubernetes/how-to/configure-autoscaling-custom-metrics/ ]
+[Ref: Strachan, James (2015-05-21). "Kubernetes for Developers". Medium (publishing platform). Archived from the original on 2015-09-07. Retrieved 2015-11-02. ]
+
+
+Kubernetes defines a set of building blocks ("primitives"), which collectively provide 
+mechanisms that deploy, maintain, and scale applications based on CPU, memory
+or custom metrics. Kubernetes is loosely coupled and extensible to meet different
+workloads. This extensibility is provided in large part by the Kubernetes API, which 
+is used by internal components as well as extensions and containers that run on Kubernetes.
+
+[Ref: Langemak, Jon (2015-02-11). "Kubernetes 101 – Networking". Das Blinken Lichten. Archived from the original on 2015-10-25. Retrieved 2015-11-02. ]
+[Ref: Strachan, James (2015-05-21). "Kubernetes for Developers". Medium (publishing platform). Archived from the original on 2015-09-07. Retrieved 2015-11-02. ]
+
+
+The basic scheduling unit in Kubernetes is a pod. It adds a higher level of abstraction 
+by grouping containerized components. A pod consists of one or more containers that are 
+guaranteed to be co-located on the host machine and can share resources. 
+Each pod in Kubernetes is assigned a unique Pod IP address within the cluster, 
+which allows applications to use ports without the risk of conflict. 
+Within the pod, all containers can reference each other on localhost, but a container 
+within one pod has no way of directly addressing another container within another pod; 
+for that, it has to use the Pod IP Address. An application developer should never use 
+the Pod IP Address though, to reference / invoke a capability in another pod, as Pod 
+IP addresses are ephemeral - the specific pod that they are referencing may be assigned 
+another Pod IP address on restart. Instead, they should use a reference to a Service, 
+which holds a reference to the target pod at the specific Pod IP Address. 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
