@@ -2,14 +2,28 @@ package entity;
 
 public class Tests {
 
-	private int counter;
-
-	public int getCounter() {
-		return counter;
+	private String name ="fas";
+	private int marks = 2;
+	private int time = 1;
+	
+	public String getName() {
+		return name;
 	}
-
-	public void setCounter(int counter) {
-		this.counter = counter;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getMarks() {
+		return marks;
+	}
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+	public int getTime() {
+		return time;
+	}
+	public void setTime(int time) {
+		this.time = time;
 	}
 	
 }
+
