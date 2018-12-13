@@ -2,9 +2,9 @@ package entity;
 
 public class Tests {
 
-	private String name;
-	private int marks;
-	private int time;
+	private String name ="fas";
+	private int marks = 2;
+	private int time = 1;
 	
 	public String getName() {
 		return name;
@@ -26,3 +26,4 @@ public class Tests {
 	}
 	
 }
+

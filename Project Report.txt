@@ -14,6 +14,8 @@ and to deploy them with more efficiency.
 Continuous Integration:
 ------------------------
 
+Reference : https://www.linkedin.com/pulse/introduction-continuous-integration-delivery-rajesh-gurram
+
 When a software is developed by meticulously following the techniques of
 continuous integration the developers are supposed to merge or integrate 
 their branches frequently, where the frequency can be several times a day.
@@ -44,4 +46,617 @@ build also fails and the team is notified regarding the failure of the build,
 so that the team can work together to fix the build.
 
 The main purpose of the Continuous Integration is to simplify the process of 
-integration of code 
+integration of different branches of the repository at an early stage of development
+to reduce the integration cost and to fix the defects as early as possible in the
+development cycle. It makes sure that the system we are trying to build is robust,
+automated and fast.
+------------------------------------------------------------------------------------------
+
+
+Continuouos Delivery:
+------------------------
+
+Reference: https://www.linkedin.com/pulse/introduction-continuous-integration-delivery-rajesh-gurram
+
+The process of Continuous Integration leads us to the process of Continuous Delivery.
+Using Continuous Integration the development team ensures that they can reduce the
+integration cost by integrating the code branches of the repository at an early stage
+of development, whereas in the process of Continuous Delivery, the development team
+tries to maintain a deployable code at the main branch i.e.; the production ready code.
+It ensures us that the code base is always in a deployable state , which makes the 
+releasing of code as an unremarkable event, as the new releases can be brought
+to the production environment without any complicated coordination or the late stage
+testing.
+
+Continuous Delivery make the use of the deployment pipeline of which the process
+of Continuous Integration is an essential part. A deployment pipeline is an automated
+system that executes the test cases on the build increasingly and in a sequence
+of stages. Continuous Delivery picks up where the Continuous Integration leaves
+in the deployment pipeline.
+
+When the code is passed on for building and the test cases are performed on
+the code then the test cases are either passed or the test cases are failed
+which raises an alert to the development team to perform the fix operation 
+on the build. This process occurs at the each stage of development. Once the
+build is passed then the build is deployed to the environment which mirrors
+the production environment as exact as possible. This deployment helps us to
+test the build, the deployment process and the environment of the production
+altogether. This pipepline ends when the build is deployed to the production
+environment finally.
+------------------------------------------------------------------------------------------
+
+Continuous Deployment:
+------------------------
+
+Reference: https://www.linkedin.com/pulse/introduction-continuous-integration-delivery-rajesh-gurram
+
+Continuous Delivery is an initial process for the Continuouos Deployment which
+deals with the automation of the deployment process by removing the need for the
+human intervention for making decisions regarding choice of what and when to 
+deploy to the production environment. It deploys everything that has successfully 
+passed the delivery pipeline. Though the deployment system deploys everything 
+which has passed the delivery pipepline, still we can implement new features 
+for all the users or a subset of users of the application at any point of time
+later in the deployment process. It helps us to deploy the new features at the 
+runtime for the customers quickly and removes all sort of confusions and bugs 
+which are present in the current release of the system.
+
+The Continuous Deployment can cause be a source of some of sort of tension for the 
+organisations who are worried about redesigning the workflow of the automation
+system for the organization. The trade-off offered by the automated deployment is 
+sometimes considered to be too dangerous for the payoff they provide. 
+
+Continuous Deployment always follows the best practises and helps us to implement
+the limited testing into the production as the code is already built and tested
+at the time of building the code in the environment similar to the production. 
+Developers must take the complete responsibility of the code which they are about
+to deploy finally into the production environment and must ensure that their code
+is well designed and tested. This gives the development team the complete authority
+to decide that what and when to commit to the main branch and what and when to 
+deploy to the production environment.
+
+Feedback is must for any organization whether it is an IT organization or not.
+Continuous Deployment helps us to get the early feedbacks from the users on the
+application which is deployed. Features can be immidiately made available to the 
+users. This will help the team to catch most of the defects and exceptions into
+code at an early stage, before they tend to move the development into an 
+uproductive direction. This is done because of the defects and bugs are not 
+caught at an early stage then this might lead us to a bigger issue at the later
+stages in the development lifecycle of the application.
+------------------------------------------------------------------------------------
+
+Test Deriven Development:
+--------------------------
+
+Contrary to the conventional approach of software development where the code is
+developed first and then the testing is performed on it to check the legibility 
+of the code that is written, the Test Driven Development asks us to divide the 
+complete project into smaller stories or epics and write the test cases for a
+particular module against its requirements. Once the test cases are made, then 
+the development process it initiated. Once the developed code passes all the
+test cases which have been written for the module, then the code which is developed
+is accepted. The testing of the developed code is automated with the help of the
+Continuous Integration engines which helps us to build the developed code and
+perform the testing on it in an environment which is similar to the production
+environment. This approach of software development helps the developer to design
+efficient code and to build confidence for the developed code.
+
+American software engineer Kent Beck, who is credited with having developed or 
+"rediscovered" the technique, stated in 2003 that TDD encourages simple designs
+and inspires confidence. 
+
+[Ref: Kent Beck (May 11, 2012). "Why does Kent Beck refer to the 
+"rediscovery" of test-driven development?". Retrieved December 1, 2014. ]
+[Ref: Beck, K. Test-Driven Development by Example, Addison Wesley - Vaseem, 2003 ]
+
+
+According to the book Test-Driven Development by Example,[Ref: Beck, K. Test-Driven Development by Example, Addison Wesley - Vaseem, 2003 ]
+the following sequence of steps can be used to successfully follow this way of development :
+
+1) Add test:-
+**************
+
+Developer must have the clear understanding of the requirements and the specifications
+of features which he is supposed to develop the code for. To get a clear cut understanding
+of the requirement and specifications, the developer must be well versed with the
+use cases and the user stories and then decide that exceptional conditions. Once
+the requirements and the specifications are clear to the developer, then he can 
+start writting the test cases for those features. These test cases infact can be
+the improved version of the previously written test cases.
+
+This development technique is actually different from the traditional unit testing
+approach as in this case we are focus on the requirement for writting the test cases
+rather developing the code.
+
+2) Run all the test and see if the new test fails
+**************************************************
+
+After writing all the test cases execute those tests. As expected the test cases
+will fail as the code for which the test cases are written is not written yet.
+
+3) Write the code
+******************
+
+Once the test cases are written then start developing the code for the project.
+The code should be written now with the approach of passing all the test cases
+written for the particular feature. The test cases must be passed in elegant way.
+At this point of development, the code is just written in order to pass the test
+suites and the code must not be written beyond the functionality. The code will 
+be improved at step 5.
+
+4) Run tests
+**************
+
+Once the code is developed, again the test suites must be executed to check that
+the code written is working perfectly and has not degraded the previously written
+code. The code written must not break the already written code and must work fine 
+with it.
+
+5) Refactor code
+*****************
+
+This is the phase when the code is refractored and arranged properly within the
+repository. The code has grown till now and it must be cleaned properly as we must
+try to ignore the duplicacy of the code. The code is moved and arranged to the 
+location where the code belongs more logically. Object, class, module, variable and
+method names should clearly represent their current purpose and use, as extra 
+functionality is added. As features are added, method bodies can get longer and 
+other objects larger. They benefit from being split and their parts carefully named
+to improve readability and maintainability, which will be increasingly valuable later 
+in the software lifecycle. Inheritance hierarchies may be rearranged to be more 
+logical and helpful, and perhaps to benefit from recognized design patterns.
+
+6) Repeat
+**********
+Starting with another new test, the cycle is then repeated to push forward the 
+functionality. The size of the steps should always be small, with as few as 1 to 
+10 edits between each test run. If new code does not rapidly satisfy a new test, 
+or other tests fail unexpectedly, the programmer should undo or revert in preference 
+to excessive debugging.
+
+-----------------------------------------------------------------------------------------
+
+
+++++++++++++++++++++++++++++++++++++++++++
+Modular Representation of the Project :
+++++++++++++++++++++++++++++++++++++++++++
+
+Module 1: Gather requirements for the web application.
+-------------------------------------------------------------------------
+
+Requirements gathering is the most important phase of application design. It is said
+that a good start is half a job done. This phase is that start for the software 
+development lifecycle. If this phase is not executed well then it will affect all the
+phases following it.
+
+To gather the requirements for this project we have tried to communicate with the
+first year students of B.Tech Computer Science and asked them what kind of software
+do they need which can help them to get good grades. We have also circulated a google
+form to get their feedbacks and after performing such rigrous operations of requirement
+gathering we came to the conclusion that we can develop a website which help them
+to prepare for the online quizes and get good grades.
+
+
+Module 2: Setting up the Deployment pipeline
+-----------------------------------------------
+
+Deployment Pipeline is a path composing of the tools and softwares which are used
+during the development, testing and deployment phase of software development.
+The different tools can be Integrated Development Environment, Version Control 
+System, Continuous Integration Engine, Cloud Deployment Platform, Code Building
+tool and Development Framework.
+
+The tools which are used for setting up the Deployment Pipeline for our project are:
+
+# Spring Tool Suite (Integrated Development Environment for Java based Spring applications)
+[Ref: https://spring.io/tools3/sts/all]
+
+# Git, Github, Git Kraken (Version Control System)
+[Ref: https://git-scm.com/downloads]
+[Ref: https://github.com/]
+[Ref: https://www.gitkraken.com/download]
+
+# Travis (Continuous Integration Engine)
+[Ref: https://Travis-ci.org/]
+
+# Heroku (Cloud Deployment Platform)
+[Ref: https://www.heroku.com/]
+
+# Gradle (Code Building tool)
+[Ref: https://gradle.org/]
+
+# Spring (Java Development Framework)
+[Ref: https://spring.io/]
+
+Github:
+--------
+
+Github Inc is a version control system, which is web hosted and provides us different
+functionalities like version controlling, bug tracking, feature requests, task management,
+and wikis for the project.
+
+*Git* is a client for the github. It is a distributed version control system for the
+systems and can be used for managing the code and its versions at the local system level.
+
+*Git Kraken* is nothing but a GUI based client for the git repositories clone to the
+local system and helps us in managing the different commits and branches of github,
+providing us a GUI based representation for the flow of code.
+
+************************************
+*Step 1: Setting up git repository.* 
+************************************
+
+The first and foremost step in setting up a deployment pipeline is to create a 
+repository on the github and to clone it on our systems.
+
+&& Attach a screenshot for the creation of a git repository on github.
+
+Our repository can be cloned to the system with the help of following GIT command
+
+% git clone https://github.com/ggandhi27/StudentEvaluation.git %
+
+**********************************************************
+*Step 2: Setting up Travis Continuous Integration Engine *
+**********************************************************
+
+Travis CI:
+-----------
+
+Travis is a free open source, hosted, distributed Continuous Integration tool which
+provides us the service of building and testing the code which is hosted on github.
+To initiate the building of the application on the Travis Engine, we have to add a
+configuration file named ".travis.yml" along with the code uploaded to the github
+repository.
+
+
+After creating the github repository, we have to login to the Travis-ci.org website,
+and link our github account to Travis. One signup on Travis with the help of their
+github account as well.
+
+&& Attach a screenshot of linking the Travis engine with the github account.
+
+
+
+After linking the github account with the Travis account, go to the travis dashboard
+and activate the github repository for the Travis to build.
+
+&& Attach screenshot of the repository activation screen.
+
+Once the repository is activated for performing the build, we have to create a file
+name ".travis.yml" in the git repository which we have created.
+
+Just mention 
+
+"""
+language: java
+jdk: oraclejdk8
+"""
+
+In the .travis.yml file and save the file. The above two lines of code tells the 
+Travis CI engine that the repository contains the code written in java programming
+language and the jdk (Java Development Kit) version which will be required for compiling
+and executing the code will be oraclejdk8. These two attributes for the file may 
+vary according to the language and the compiler versions which will be required 
+for that particular language suite.
+
+Once the file is created and saved in the repository, create commit in the git 
+repository and push the code to the github.
+
+Commands for creating the commit and pushing the code to the git hub are.
+
+% git add .travis.yml %
+% git commit -m ".travis.yml configuration file for travis is added" %
+% git push %
+
+When the git push command is executed, it will ask for the username and the password.
+Once the username and password is authenticated, the commit created will be pushed
+to the github and at the same time a build will be initiated in Travis CI corresponding
+to the code pushed.
+
+&& Attach a screen shot for the code build for the first commit pushed.
+
+
+******************************************************
+*Step 3: Setting up Heroku Cloud Deployment platform.*
+******************************************************
+
+Heroku is a cloud deployment platform which provides us free resources to some 
+extent to deploy and test applications.
+
+As we are going to use gradle as a build tool for our application, hence we have to
+follow the following steps for the deployment of a gradle application on Heroku.
+
+ - Create a heroku account.
+ - Install Heroku CLI on the system. [Ref: https://devcenter.heroku.com/articles/heroku-cli]
+ - Install java jdk.
+ - Create a gradle based java application.
+ - Perform all these tasks with the git repository as the current working directory.
+ - $heroku login
+ - $heroku create
+ - $git push heroku master
+ - $heroku open
+
+[Ref: https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku]
+
+As we will execute the $heroku create command, it will create an application for us,
+which can be pushed to the heroku server by using the $ git push heroku master 
+command.
+
+Note the name of the application which is create by the heroku command line tool.
+
+Now we have to deploy the code to the heroku application on the heroku cloud platform,
+from the travis CI.
+
+[Ref: https://docs.travis-ci.com/user/deployment/heroku/]
+ - Generate a authorization token for the heroku with the help of following command.
+	$ heroku auth:token
+
+ - Note the api which is generated by the heroku client.
+ - Edit the .travis.yml file and append the following deployment code to it.
+
+"""
+deploy:
+  provider: heroku
+  app: "NAME OF THE APPLICATION CREATED"
+  api_key:
+    secure: "YOUR ENCRYPTED API KEY"
+
+"""
+
+Now save the file, commit the changes and push the commits to the github.
+Travis will automatically fetch the updated state of the repository from the github,
+and start performing the build operation on the code. Once the code is successfully
+built by Travis, it will deploy the code on the heroku application mentioned in the
+.travis.yml file.
+
+------------------------------------------------------------------------------------
+
+Module 3: Designing application according to the requirements gathered
+-----------------------------------------------------------------------
+
+Our application will be a platform free for the students to test their skills on the
+programming languages like Java and C. The application will contain Multiple Choice
+type questions tests where the users of the application can anytime login into the
+application and can test their skills on the language of their own choice. It will be
+a web based application which will be accessible to the users of the application 
+from anywhere over the internet from their web browser.
+
+First of all the user has to get him registered on the application and once the
+user is registered in successfully he have to perform the login operation using
+the username and the password which he has chosen at the time of registering himself.
+
+Once the user is successfully logged in to the system he can choose any of the 
+languages available for which he has to give the test for. 
+
+As soon as the user selects the language, a test will begin for him. There will
+be 25 questions which can be answered by the user. 
+
+On the user dashboard there will be a tab where the user can check his marks for the
+previous tests which were submitted by the user.
+
+User must get a log out button to successfully end the session which he has created
+once he logs into the system.
+-----------------------------------------------------------------------------------
+
+Module 4: Generating Test Cases
+-------------------------------
+
+As we are using Test Driven Development approach for developing the application hence
+the test cases has to be generated prior to starting the development of the application.
+For generating the test cases for the application and to perform testing on the application
+we have used JUnit framework integrated with the gradle build tool. When the code
+is built in the continuous integration engine travis, at that time the test cases 
+are executed. If any of the test cases fails to execute then the build fails and 
+the developer must handle the issue which is causing the build to fail or else
+if the test cases passes, in that cases the code is built successfully and hence 
+we can perform further operations in the development.
+
+Module 5: Development of Application
+-------------------------------------
+
+To develop this application we have chosen Java as the programming language and 
+the Java Spring Framework as the framework for the development of the application.
+The code is divided into three types of classes i.e. Controller, Service and Entity.
+Controller classes are reponsible for accepting the request from the front end,
+Service classes contains the complete business logic for the application and 
+Entity classes are the classes which contains the object from the database.
+The development of the application must go on in accordance with the test cases which
+are developed at the time of the Test Case Generation. As soon as a feature is developed,
+it must be committed and pushed to the github. Once the code is pushed to the github,
+Travis fetches the complete repository and performs build operation on the code.
+At the time of building, the developed code is tested for the test cases generated.
+If all the test cases executes successfully, in that case the build is performed 
+successfully or else it fails. Developer must look after the issues which are causing 
+the test suites to fail.
+
+
+
+
+-------------------------------------------------------------------------------------
+
+Literature Review:
+-------------------
+
+Containerization:
+++++++++++++++++++++
+
+[Ref: https://www.cio.com/article/2924995/software/what-are-containers-and-why-do-you-need-them.html]
+[Ref: https://containment.comodo.com/containerization/]
+
+Containerization is a technology which allows enterprises to run suspicious applications 
+in a separate environment without affecting other processes. Designed to increase 
+enterprise security, they also streamline enterprise IT operations.
+Containers are a solution to the problem of how to get software to run reliably when moved 
+from one computing environment to another. This could be from a developer's laptop to a test 
+environment, from a staging environment into production, and perhaps from a physical machine 
+in a data center to a virtual machine in a private or public cloud.
+A container consists of an entire runtime environment: an application, plus all its 
+dependencies, libraries and other binaries, and configuration files needed to run it, 
+bundled into one package. By containerizing the application platform and its dependencies, 
+differences in OS distributions and underlying infrastructure are abstracted away.
+A container may be only tens of megabytes in size. container technology is not new; it 
+has been built into Linux in the form of LXC for over 10 years, and similar operating 
+system level virtualization has also been offered by FreeBSD jails, AIX Workload 
+Partitions and Solaris Containers. 
+
+Spinbot version:
+-----------------
+Containerization is a technology which enables enterprises to run suspicious applications 
+
+in a different environment without influencing different procedures. Intended to increment 
+
+enterprise security, they additionally streamline enterprise IT tasks. 
+
+Containers are an answer for the issue of how to motivate programming to run dependably when moved 
+
+starting with one figuring environment then onto the next. This could be from an engineer's workstation to a test 
+
+environment, from an organizing environment into creation, and maybe from a physical machine 
+
+in a server farm to a virtual machine in a private or open cloud. 
+
+A holder comprises of a whole runtime environment: an application, in addition to all its 
+
+conditions, libraries and different pairs, and setup records expected to run it, 
+
+packaged into one bundle. By containerizing the application stage and its conditions, 
+
+contrasts in OS disseminations and hidden infrastructure are disconnected away. 
+
+A holder might be just many megabytes in size. compartment technology isn't new; it 
+
+has been incorporated with Linux as LXC for more than 10 years, and comparative working 
+
+framework level virtualization has likewise been offered by FreeBSD correctional facilites, AIX Workload 
+
+Segments and Solaris Containers.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Containerization vs Virtualization:
+++++++++++++++++++++++++++++++++++++
+
+[Ref: https://mainframedebate.com/2015/03/20/virtualization-vs-containerization/]
+
+Containers give separated runtime environments to applications: the whole client 
+space environment is solely displayed to the holder, and any progressions to it 
+don't affect other containers' environments. To give this seclusion, a blend of 
+OS-based components is utilized: Linux name spaces are utilized for disengagement 
+and checking instrument. Document framework mounts characterize what records are 
+open to the holder. cgroups characterize asset utilization of containers. Still 
+all containers share a similar OS part which can understand memory impression 
+efficiencies when indistinguishable libraries are utilized by different containers. 
+
+With framework virtualization, the hypervisor gives a full virtual machine to a 
+visitor: the whole OS picture including the part is currently devoted to the virtual 
+machine. CPU virtualization is utilized to furnish every visitor with a select perspective 
+of a full framework environment, and these instruments likewise guarantee seclusion from 
+different visitors. Hypervisor-based administration of virtual CPUs, memory and 
+I/O gadgets is utilized to characterize asset utilization of visitors.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Different types of Containerization tools:
++++++++++++++++++++++++++++++++++++++++++++
+
+Docker:
+++++++++
+
+[Ref: "Docker Releases". GitHub. Docker, Inc. August 22, 2018. Retrieved August 23, 2018. ]
+[Ref: "Docker source code". docs.docker.com. Docker, Inc. October 12, 2015. Retrieved October 24, 2015. ]
+[Ref: "Get started with Docker for Windows". docker.com. Retrieved September 27, 2018.]
+[Ref: O'Gara, Maureen (July 26, 2013). "Ben Golub, Who Sold Gluster to Red Hat, Now Running dotCloud". SYS-CON Media. Retrieved August 9, 2013. ]
+[Ref: Vivek Ratan (February 8, 2017). "Docker: A Favourite in the DevOps World". Open Source For U. Retrieved June 14, 2017. ]
+[Ref: "One home for all your apps". dotcloud.com. Archived from the original on May 17, 2014. Retrieved May 8, 2014.]
+
+Solomon Hykes started Docker in France as an internal project within dotCloud, a 
+platform-as-a-service company, with initial contributions by other dotCloud engineers 
+including Andrea Luzzardi and Francois-Xavier Bourlet.
+Docker is a computer program that performs operating-system-level virtualization, 
+also known as "containerization". Docker is utilized to run programming bundles 
+called "containers". Containers are secluded from one another and package their 
+own application, apparatuses, libraries and arrangement documents; they can 
+speak with one another through very much characterized channels. All containers 
+are controlled by a solitary working framework part and are consequently more 
+lightweight than virtual machines. Containers are made from "pictures" that determine 
+their exact substance. Pictures are frequently made by consolidating and changing 
+standard pictures downloaded from open archives.
+
+
+Docker from Minor 2:
+++++++++++++++++++++++
+Docker is a platform used to develop, ship and run applications. Docker provides isolation
+between running application and the infrastructure with the help of containers. Containers are
+light weight as they are run directly from within the host machine's kernel. [6]
+Next, we have docker engine which has 3 major components:
+1. A Server which is a daemon process.
+2. A Rest API which is used as an interface between programs and the daemon process.
+3.A Command line interface client. [6]
+Microservices are small autonomous services that work together to fulfill a business
+requirement.
+It is a method of developing software applications as a suite of small modular services,
+deployable in which services run unique process and communicates through a well-defined,
+lightweight mechanism to serve a business goal. [7]
+
+Kubernetes:
+++++++++++++
+
+[Ref: "One home for all your apps". dotcloud.com. Archived from the original on May 17, 2014. Retrieved May 8, 2014.]
+
+Kubernetes is an open-source system for automating deployment, scaling, and management 
+of containerized applications. It groups containers that make up an application into 
+logical units for easy management and discovery. Kubernetes builds upon 15 years of 
+experience of running production workloads at Google, combined with best-of-breed ideas 
+and practices from the community.
+
+[Ref:  https://blog.powerupcloud.com/autoscaling-based-on-cpu-memory-in-kubernetes-part-ii-fe2e495bddd4 ]
+[Ref: https://docs.bitnami.com/kubernetes/how-to/configure-autoscaling-custom-metrics/ ]
+[Ref: Strachan, James (2015-05-21). "Kubernetes for Developers". Medium (publishing platform). Archived from the original on 2015-09-07. Retrieved 2015-11-02. ]
+
+
+Kubernetes defines a set of building blocks ("primitives"), which collectively provide 
+mechanisms that deploy, maintain, and scale applications based on CPU, memory
+or custom metrics. Kubernetes is loosely coupled and extensible to meet different
+workloads. This extensibility is provided in large part by the Kubernetes API, which 
+is used by internal components as well as extensions and containers that run on Kubernetes.
+
+[Ref: Langemak, Jon (2015-02-11). "Kubernetes 101 – Networking". Das Blinken Lichten. Archived from the original on 2015-10-25. Retrieved 2015-11-02. ]
+[Ref: Strachan, James (2015-05-21). "Kubernetes for Developers". Medium (publishing platform). Archived from the original on 2015-09-07. Retrieved 2015-11-02. ]
+
+
+The basic scheduling unit in Kubernetes is a pod. It adds a higher level of abstraction 
+by grouping containerized components. A pod consists of one or more containers that are 
+guaranteed to be co-located on the host machine and can share resources. 
+Each pod in Kubernetes is assigned a unique Pod IP address within the cluster, 
+which allows applications to use ports without the risk of conflict. 
+Within the pod, all containers can reference each other on localhost, but a container 
+within one pod has no way of directly addressing another container within another pod; 
+for that, it has to use the Pod IP Address. An application developer should never use 
+the Pod IP Address though, to reference / invoke a capability in another pod, as Pod 
+IP addresses are ephemeral - the specific pod that they are referencing may be assigned 
+another Pod IP address on restart. Instead, they should use a reference to a Service, 
+which holds a reference to the target pod at the specific Pod IP Address. 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-----------------------------------------------------------------------------------
+
+Travis:
++++++++
+
+Travis CI introduces automated builds which makes it easier for project developers
+to develop their projects while testing it side by side. Whenever the developer pushes 
+their code in their respective repository online then the builds are automatically 
+triggered. Travis CI opens up the door for CI which means continuous integration which 
+basically means to develop code and test it without much overhead borne by the user. 
+This platform is free to use by all open source projects  that are hosted upon GITHUB. 
+To activate the automatic builds on the TRAVIS a configuration file called travis.yml 
+has to be made which holds information about what branch to use for the pipeline.
+-------------------------------------------------------------------------------------
+
+
+Java Spring Framework:
++++++++++++++++++++++++
+
