@@ -89,6 +89,55 @@ public class CreateXml {
       }
       
    }
+	public static void testInfoUpdation() {
+	   Tests testMod = new Tests();
+	   try {
+		   	 String inputFile = "src\\com\\javaxml\\rajendar.xml";
+	         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+	         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+	         Document doc = docBuilder.parse(inputFile);
+	         Node user = doc.getDocumentElement();
+	         Node tests = doc.getElementsByTagName("tests").item(0);
+	         int counter = Integer.parseInt(doc.getElementsByTagName("counter").item(0).getTextContent());
+	         System.out.println(counter);
+	         
+	         //test element creation
+	         Element test = doc.createElement("test");
+	         tests.appendChild(test);
+		        
+	         //setting id attribute
+	         Attr attr = doc.createAttribute("id");
+	         attr.setValue(""+counter);
+	         test.setAttributeNode(attr);
+	         
+	         //name child elements for test element
+	         Element name = doc.createElement("name");
+	         test.appendChild(name);
+	         name.appendChild(doc.createTextNode(testMod.getName()));
+	         
+	         //marks child elements for test element
+	         Element marks = doc.createElement("marks");
+	         test.appendChild(marks);
+	         marks.appendChild(doc.createTextNode(""+testMod.getMarks()));
+	         
+	         //time child elements for test element
+	         Element time = doc.createElement("time");
+	         test.appendChild(time);
+	         time.appendChild(doc.createTextNode(""+testMod.getTime()));
+		        
+		     Node count = doc.getElementsByTagName("counter").item(0);
+		     count.setTextContent(""+(counter+1));
+		     
+		     TransformerFactory transformerFactory = TransformerFactory.newInstance();
+		     Transformer transformer = transformerFactory.newTransformer();
+		     DOMSource source = new DOMSource(doc);
+		     StreamResult result = new StreamResult(new File(inputFile));
+		     transformer.transform(source, result);
+	   }
+	   catch (Exception e) {
+	         e.printStackTrace();
+	   }
+   }
    public static void main(String[] argv) {
 	   
 	  User obj = new User();
